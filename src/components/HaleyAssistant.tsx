@@ -1,0 +1,128 @@
+import React, { useState, useEffect } from 'react';
+
+interface HaleyAssistantProps {
+  isVisible?: boolean;
+  mood?: 'happy' | 'excited' | 'helpful' | 'winking';
+  position?: 'fixed' | 'relative';
+  message?: string;
+}
+
+const HaleyAssistant: React.FC<HaleyAssistantProps> = ({ 
+  isVisible = true, 
+  mood = 'happy', 
+  position = 'fixed',
+  message 
+}) => {
+  const [currentMood, setCurrentMood] = useState(mood);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [showMessage, setShowMessage] = useState(false);
+
+  const haleyPhrases = [
+    "Welcome to my dreamland! 🌸",
+    "Need help with tools? I'm here! ✨",
+    "Let's discover amazing anime together! 💖",
+    "Want to create viral content? 🚀",
+    "I love helping you succeed! 🌟",
+    "This is where magic happens! ⭐"
+  ];
+
+  const [currentPhrase, setCurrentPhrase] = useState(haleyPhrases[0]);
+
+  useEffect(() => {
+    const phraseInterval = setInterval(() => {
+      setCurrentPhrase(haleyPhrases[Math.floor(Math.random() * haleyPhrases.length)]);
+    }, 5000);
+
+    const moodInterval = setInterval(() => {
+      const moods: typeof mood[] = ['happy', 'excited', 'helpful', 'winking'];
+      setCurrentMood(moods[Math.floor(Math.random() * moods.length)]);
+    }, 3000);
+
+    return () => {
+      clearInterval(phraseInterval);
+      clearInterval(moodInterval);
+    };
+  }, []);
+
+  const handleClick = () => {
+    setIsAnimating(true);
+    setShowMessage(true);
+    setTimeout(() => {
+      setIsAnimating(false);
+      setShowMessage(false);
+    }, 3000);
+  };
+
+  if (!isVisible) return null;
+
+  return (
+    <div className={`${position === 'fixed' ? 'fixed bottom-8 right-8 z-50' : 'relative'} cursor-pointer`}>
+      {/* Speech bubble */}
+      {(showMessage || message) && (
+        <div className="absolute bottom-full right-0 mb-4 max-w-xs">
+          <div className="glass-card p-3 relative">
+            <p className="text-sm font-medium text-center magic-text">
+              {message || currentPhrase}
+            </p>
+            <div className="absolute bottom-0 right-8 w-0 h-0 border-l-8 border-r-8 border-t-8 border-transparent border-t-card transform translate-y-full"></div>
+          </div>
+        </div>
+      )}
+
+      {/* Haley Character */}
+      <div 
+        onClick={handleClick}
+        className={`
+          relative w-32 h-32 rounded-full glass-card-hover float-element
+          ${isAnimating ? 'animate-glow-pulse' : ''}
+          bg-gradient-to-br from-haley-blue via-purple-primary to-sakura-primary
+          p-1
+        `}
+      >
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm flex items-center justify-center">
+          {/* Haley's Avatar */}
+          <div className="relative">
+            {/* Hair */}
+            <div className="absolute -top-6 -left-4 w-16 h-12 bg-haley-blue rounded-full opacity-80 blur-sm"></div>
+            <div className="absolute -top-4 -right-2 w-12 h-8 bg-haley-glow rounded-full opacity-60 blur-sm"></div>
+            
+            {/* Face */}
+            <div className="w-16 h-16 bg-gradient-to-b from-pink-100 to-pink-50 rounded-full relative border-2 border-white/30">
+              {/* Eyes */}
+              <div className="absolute top-4 left-3 flex space-x-2">
+                <div className={`w-2 h-2 bg-haley-blue rounded-full glow-element ${currentMood === 'winking' ? 'animate-pulse' : ''}`}></div>
+                <div className={`w-2 h-2 bg-haley-blue rounded-full glow-element ${currentMood === 'winking' ? 'opacity-30' : ''}`}></div>
+              </div>
+              
+              {/* Mouth */}
+              <div className={`absolute top-7 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-sakura-primary rounded-full ${currentMood === 'excited' ? 'scale-125' : ''} transition-transform`}></div>
+              
+              {/* Blush */}
+              {currentMood === 'excited' && (
+                <>
+                  <div className="absolute top-5 left-1 w-2 h-1 bg-sakura-light rounded-full opacity-70"></div>
+                  <div className="absolute top-5 right-1 w-2 h-1 bg-sakura-light rounded-full opacity-70"></div>
+                </>
+              )}
+            </div>
+            
+            {/* Accessories */}
+            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-yellow-300 text-xs glow-element">
+              ✨
+            </div>
+          </div>
+        </div>
+        
+        {/* Magical aura */}
+        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sakura-primary/20 to-haley-blue/20 blur-xl animate-glow-pulse"></div>
+      </div>
+      
+      {/* Floating sparkles */}
+      <div className="absolute -top-2 -left-2 text-yellow-300 animate-glow-pulse">✨</div>
+      <div className="absolute -bottom-1 -right-1 text-pink-300 animate-float">🌸</div>
+      <div className="absolute top-1/2 -left-6 text-purple-300 animate-glow-pulse delay-1000">⭐</div>
+    </div>
+  );
+};
+
+export default HaleyAssistant;

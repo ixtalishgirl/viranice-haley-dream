@@ -13,12 +13,27 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        'poppins': ['Poppins', 'sans-serif'],
+        'nunito': ['Nunito', 'sans-serif'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
+        
+        /* Magical Anime Colors */
+        'sakura-primary': "hsl(var(--sakura-primary))",
+        'sakura-light': "hsl(var(--sakura-light))",
+        'sakura-glow': "hsl(var(--sakura-glow))",
+        'purple-primary': "hsl(var(--purple-primary))",
+        'purple-light': "hsl(var(--purple-light))",
+        'purple-deep': "hsl(var(--purple-deep))",
+        'haley-blue': "hsl(var(--haley-blue))",
+        'haley-glow': "hsl(var(--haley-glow))",
+        
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -46,6 +61,7 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+          border: "hsl(var(--card-border))",
         },
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
@@ -80,10 +96,41 @@ export default {
             height: "0",
           },
         },
+        "sakura-fall": {
+          "0%": {
+            transform: "translateY(-100vh) rotate(0deg)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "translateY(100vh) rotate(360deg)",
+            opacity: "0",
+          },
+        },
+        "glow-pulse": {
+          "0%, 100%": {
+            opacity: "1",
+            transform: "scale(1)",
+          },
+          "50%": {
+            opacity: "0.7",
+            transform: "scale(1.05)",
+          },
+        },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "sakura-fall": "sakura-fall 8s linear infinite",
+        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+        "float": "float 3s ease-in-out infinite",
       },
     },
   },
