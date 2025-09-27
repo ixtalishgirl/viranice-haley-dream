@@ -24,13 +24,13 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         
-        /* Magical Anime Colors */
-        'sakura-primary': "hsl(var(--sakura-primary))",
-        'sakura-light': "hsl(var(--sakura-light))",
-        'sakura-glow': "hsl(var(--sakura-glow))",
-        'purple-primary': "hsl(var(--purple-primary))",
-        'purple-light': "hsl(var(--purple-light))",
-        'purple-deep': "hsl(var(--purple-deep))",
+        /* Magical Neon Colors */
+        'neon-blue': "hsl(var(--neon-blue))",
+        'neon-blue-light': "hsl(var(--neon-blue-light))",
+        'neon-blue-glow': "hsl(var(--neon-blue-glow))",
+        'neon-green': "hsl(var(--neon-green))",
+        'neon-green-light': "hsl(var(--neon-green-light))",
+        'neon-green-deep': "hsl(var(--neon-green-deep))",
         'haley-blue': "hsl(var(--haley-blue))",
         'haley-glow': "hsl(var(--haley-glow))",
         
@@ -116,6 +116,34 @@ export default {
             transform: "scale(1.05)",
           },
         },
+        "flower-explosion": {
+          "0%": {
+            transform: "scale(0) rotate(0deg)",
+            opacity: "0",
+          },
+          "50%": {
+            transform: "scale(1.2) rotate(180deg)",
+            opacity: "1",
+          },
+          "100%": {
+            transform: "scale(0) rotate(360deg)",
+            opacity: "0",
+          },
+        },
+        "boom-effect": {
+          "0%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+          "50%": {
+            transform: "scale(1.3)",
+            opacity: "0.8",
+          },
+          "100%": {
+            transform: "scale(1)",
+            opacity: "1",
+          },
+        },
         "float": {
           "0%, 100%": {
             transform: "translateY(0px)",
@@ -131,6 +159,8 @@ export default {
         "sakura-fall": "sakura-fall 8s linear infinite",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         "float": "float 3s ease-in-out infinite",
+        "flower-explosion": "flower-explosion 0.6s ease-out",
+        "boom-effect": "boom-effect 0.3s ease-out",
       },
     },
   },

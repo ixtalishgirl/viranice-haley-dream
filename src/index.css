@@ -11,24 +11,24 @@
     --background: 320 100% 98%;
     --foreground: 260 15% 15%;
 
-    /* Sakura Pink Theme */
-    --sakura-primary: 330 81% 68%;
-    --sakura-light: 330 81% 85%;
-    --sakura-glow: 330 81% 75%;
+    /* Neon Blue Theme */
+    --neon-blue: 195 100% 65%;
+    --neon-blue-light: 195 100% 80%;
+    --neon-blue-glow: 195 100% 75%;
     
-    /* Pastel Purple Theme */
-    --purple-primary: 270 50% 70%;
-    --purple-light: 270 50% 85%;
-    --purple-deep: 270 50% 55%;
+    /* Neon Green Theme */
+    --neon-green: 120 100% 60%;
+    --neon-green-light: 120 100% 75%;
+    --neon-green-deep: 120 100% 45%;
     
     /* Glass Morphism */
-    --glass-bg: 0 0% 100% / 0.1;
-    --glass-border: 0 0% 100% / 0.2;
-    --glass-shadow: 0 0% 0% / 0.1;
+    --glass-bg: 195 50% 10% / 0.2;
+    --glass-border: 195 100% 65% / 0.3;
+    --glass-shadow: 195 100% 65% / 0.1;
     
     /* Haley Theme Colors */
-    --haley-blue: 200 100% 70%;
-    --haley-glow: 200 100% 80%;
+    --haley-blue: 195 100% 65%;
+    --haley-glow: 195 100% 80%;
     
     /* Card System */
     --card: 0 0% 100% / 0.8;
@@ -36,34 +36,34 @@
     --card-border: 330 81% 90%;
 
     /* Elegant Gradients */
-    --gradient-sakura: linear-gradient(135deg, hsl(var(--sakura-primary)), hsl(var(--sakura-light)));
-    --gradient-purple: linear-gradient(135deg, hsl(var(--purple-primary)), hsl(var(--purple-light)));
-    --gradient-magic: linear-gradient(135deg, hsl(var(--sakura-primary)), hsl(var(--purple-primary)));
+    --gradient-neon-blue: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-blue-light)));
+    --gradient-neon-green: linear-gradient(135deg, hsl(var(--neon-green)), hsl(var(--neon-green-light)));
+    --gradient-magic: linear-gradient(135deg, hsl(var(--neon-blue)), hsl(var(--neon-green)));
     --gradient-glass: linear-gradient(135deg, hsl(var(--glass-bg)), hsl(var(--glass-border)));
     
     /* Interactive Elements */
-    --primary: 330 81% 68%;
+    --primary: 195 100% 65%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 330 81% 75%;
+    --primary-glow: 195 100% 75%;
 
-    --secondary: 270 50% 70%;
+    --secondary: 120 100% 60%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 270 50% 80%;
+    --secondary-glow: 120 100% 75%;
 
-    --accent: 200 100% 70%;
+    --accent: 195 100% 70%;
     --accent-foreground: 0 0% 100%;
-    --accent-glow: 200 100% 80%;
+    --accent-glow: 195 100% 80%;
 
     /* System Colors */
-    --muted: 330 20% 95%;
-    --muted-foreground: 260 15% 45%;
-    --border: 330 81% 90%;
-    --input: 330 20% 95%;
-    --ring: 330 81% 68%;
+    --muted: 195 20% 95%;
+    --muted-foreground: 195 15% 45%;
+    --border: 195 100% 80%;
+    --input: 195 20% 95%;
+    --ring: 195 100% 65%;
     
     /* Magical Effects */
-    --shadow-glow: 0 10px 40px hsl(var(--sakura-primary) / 0.3);
-    --shadow-purple: 0 10px 40px hsl(var(--purple-primary) / 0.3);
+    --shadow-glow: 0 10px 40px hsl(var(--neon-blue) / 0.3);
+    --shadow-green: 0 10px 40px hsl(var(--neon-green) / 0.3);
     --shadow-glass: 0 8px 32px hsl(var(--glass-shadow));
     
     --radius: 1rem;
@@ -110,8 +110,8 @@
     width: 100%;
     height: 100%;
     background: 
-      radial-gradient(circle at 20% 80%, hsl(var(--sakura-primary) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--purple-primary) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 20% 80%, hsl(var(--neon-blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, hsl(var(--neon-green) / 0.1) 0%, transparent 50%),
       radial-gradient(circle at 40% 40%, hsl(var(--haley-blue) / 0.05) 0%, transparent 50%);
     pointer-events: none;
     z-index: -1;
@@ -137,26 +137,26 @@
   /* Magical Buttons */
   .btn-sakura {
     @apply rounded-full px-6 py-3 font-semibold transition-all duration-300;
-    background: var(--gradient-sakura);
+    background: var(--gradient-neon-blue);
     color: hsl(var(--primary-foreground));
     box-shadow: var(--shadow-glow);
   }
 
   .btn-sakura:hover {
     @apply scale-105;
-    box-shadow: 0 15px 50px hsl(var(--sakura-primary) / 0.4);
+    box-shadow: 0 15px 50px hsl(var(--neon-blue) / 0.4);
   }
 
   .btn-purple {
     @apply rounded-full px-6 py-3 font-semibold transition-all duration-300;
-    background: var(--gradient-purple);
+    background: var(--gradient-neon-green);
     color: hsl(var(--secondary-foreground));
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-green);
   }
 
   .btn-purple:hover {
     @apply scale-105;
-    box-shadow: 0 15px 50px hsl(var(--purple-primary) / 0.4);
+    box-shadow: 0 15px 50px hsl(var(--neon-green) / 0.4);
   }
 
   .btn-haley {
@@ -172,20 +172,20 @@
 
   /* Haley's Magical Text */
   .haley-title {
-    @apply text-4xl md:text-6xl font-bold bg-gradient-to-r from-sakura-primary to-purple-primary bg-clip-text text-transparent;
+    @apply text-4xl md:text-6xl font-bold bg-gradient-to-r from-neon-blue to-neon-green bg-clip-text text-transparent;
     font-family: 'Nunito', sans-serif;
-    text-shadow: 0 0 30px hsl(var(--sakura-primary) / 0.3);
+    text-shadow: 0 0 30px hsl(var(--neon-blue) / 0.3);
   }
 
   .magic-text {
-    @apply bg-gradient-to-r from-sakura-primary to-purple-primary bg-clip-text text-transparent font-semibold;
+    @apply bg-gradient-to-r from-neon-blue to-neon-green bg-clip-text text-transparent font-semibold;
   }
 
-  /* Animated Sakura Petals */
+  /* Animated Nature Petals */
   .sakura-petal {
     position: fixed;
     font-size: 1.5rem;
-    color: hsl(var(--sakura-primary));
+    color: hsl(var(--neon-blue));
     pointer-events: none;
     z-index: 1;
     animation: sakura-fall 8s linear infinite;

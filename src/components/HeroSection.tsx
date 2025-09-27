@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
-import haleyHero from '@/assets/haley-hero.jpg';
+import haleyNew from '@/assets/haley-new.jpg';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -32,8 +32,8 @@ const HeroSection = () => {
     <section id="home" className="min-h-screen relative overflow-hidden flex items-center justify-center">
       {/* Magical Background Elements */}
       <div className="absolute inset-0 magic-bg">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-sakura-primary/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-32 right-16 w-40 h-40 bg-purple-primary/10 rounded-full blur-3xl animate-float delay-1000"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-32 right-16 w-40 h-40 bg-neon-green/10 rounded-full blur-3xl animate-float delay-1000"></div>
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-haley-blue/10 rounded-full blur-2xl animate-glow-pulse"></div>
       </div>
 
@@ -83,11 +83,11 @@ const HeroSection = () => {
             {/* Features */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-8">
               <div className="flex items-center space-x-2 text-sm">
-                <Sparkles className="w-4 h-4 text-sakura-primary" />
+                <Sparkles className="w-4 h-4 text-neon-blue" />
                 <span>Free AI Tools</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
-                <Heart className="w-4 h-4 text-purple-primary" />
+                <Heart className="w-4 h-4 text-neon-green" />
                 <span>Premium Anime</span>
               </div>
               <div className="flex items-center space-x-2 text-sm">
@@ -103,11 +103,11 @@ const HeroSection = () => {
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
-                  src={haleyHero} 
+                  src={haleyNew} 
                   alt="Haley - Your magical AI assistant" 
                   className="w-full h-full object-cover animate-float"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-sakura-primary/20 via-transparent to-purple-primary/20"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
               </div>
 
               {/* Interactive Haley Assistant */}
@@ -122,14 +122,14 @@ const HeroSection = () => {
               )}
 
               {/* Floating Elements */}
-              <div className="absolute top-10 right-10 text-4xl animate-float">🌸</div>
-              <div className="absolute bottom-20 left-10 text-3xl animate-glow-pulse delay-500">✨</div>
-              <div className="absolute top-1/3 left-5 text-2xl animate-float delay-1000">⭐</div>
-              <div className="absolute bottom-10 right-20 text-3xl animate-glow-pulse delay-1500">💖</div>
+              <div className="absolute top-10 right-10 text-4xl animate-float">🏔️</div>
+              <div className="absolute bottom-20 left-10 text-3xl animate-glow-pulse delay-500">💧</div>
+              <div className="absolute top-1/3 left-5 text-2xl animate-float delay-1000">🌲</div>
+              <div className="absolute bottom-10 right-20 text-3xl animate-glow-pulse delay-1500">✨</div>
               
               {/* Magical Circles */}
-              <div className="absolute inset-0 border border-sakura-primary/20 rounded-full animate-glow-pulse"></div>
-              <div className="absolute inset-8 border border-purple-primary/20 rounded-full animate-glow-pulse delay-1000"></div>
+              <div className="absolute inset-0 border border-neon-blue/20 rounded-full animate-glow-pulse"></div>
+              <div className="absolute inset-8 border border-neon-green/20 rounded-full animate-glow-pulse delay-1000"></div>
               <div className="absolute inset-16 border border-haley-blue/20 rounded-full animate-glow-pulse delay-2000"></div>
             </div>
           </div>
@@ -138,8 +138,8 @@ const HeroSection = () => {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-sakura-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-sakura-primary rounded-full mt-2 animate-glow-pulse"></div>
+        <div className="w-6 h-10 border-2 border-neon-blue rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-neon-blue rounded-full mt-2 animate-glow-pulse"></div>
         </div>
       </div>
     </section>

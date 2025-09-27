@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import ToolModal from './tools/ToolModal';
 import { 
   Wand2, 
   Youtube, 
@@ -26,6 +27,7 @@ import {
 
 const ToolsSection = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const [selectedTool, setSelectedTool] = useState<{id: number, name: string} | null>(null);
 
   const categories = [
     { id: 'all', name: 'All Tools', icon: <Wand2 className="w-4 h-4" /> },
@@ -88,7 +90,7 @@ const ToolsSection = () => {
       icon: <Image className="w-6 h-6" />,
       category: 'ai',
       badge: 'Magic ⭐',
-      color: 'from-sakura-primary to-purple-primary'
+      color: 'from-neon-blue to-neon-green'
     },
     {
       id: 7,
@@ -187,17 +189,21 @@ const ToolsSection = () => {
         {/* Tools Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredTools.map((tool) => (
-            <Card key={tool.id} className="glass-card-hover group cursor-pointer border-0">
+            <Card 
+              key={tool.id} 
+              className="glass-card-hover group cursor-pointer border-0"
+              onClick={() => setSelectedTool({id: tool.id, name: tool.name})}
+            >
               <CardHeader className="pb-3">
                 <div className="flex items-start justify-between">
                   <div className={`p-3 rounded-xl bg-gradient-to-br ${tool.color} text-white group-hover:scale-110 transition-transform`}>
                     {tool.icon}
                   </div>
-                  <Badge className="bg-sakura-primary/20 text-sakura-primary border-sakura-primary/30">
+                  <Badge className="bg-neon-blue/20 text-neon-blue border-neon-blue/30">
                     {tool.badge}
                   </Badge>
                 </div>
-                <CardTitle className="text-lg font-semibold font-poppins group-hover:text-sakura-primary transition-colors">
+                <CardTitle className="text-lg font-semibold font-poppins group-hover:text-neon-blue transition-colors">
                   {tool.name}
                 </CardTitle>
               </CardHeader>
@@ -205,13 +211,23 @@ const ToolsSection = () => {
                 <p className="text-sm text-muted-foreground mb-4 font-poppins">
                   {tool.description}
                 </p>
-                <Button className="w-full btn-haley text-sm">
+                <Button className="w-full btn-haley text-sm animate-boom-effect">
                   Try Now <Zap className="w-4 h-4 ml-2" />
                 </Button>
               </CardContent>
             </Card>
           ))}
         </div>
+
+        {/* Tool Modal */}
+        {selectedTool && (
+          <ToolModal
+            isOpen={!!selectedTool}
+            onClose={() => setSelectedTool(null)}
+            toolId={selectedTool.id}
+            toolName={selectedTool.name}
+          />
+        )}
 
         {/* CTA Section */}
         <div className="text-center mt-16">
