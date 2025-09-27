@@ -144,29 +144,29 @@ const AnimeSection = () => {
   });
 
   return (
-    <section id="anime" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="anime" className="py-12 relative">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold">
             <span className="magic-text">Anime Paradise</span> 🌸
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-poppins">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto font-poppins">
             Dive into Haley's carefully curated collection of the most beautiful anime. 
             From heartwarming romances to epic adventures - find your next favorite series! 💖
           </p>
         </div>
 
         {/* Search & Filter */}
-        <div className="flex flex-col md:flex-row gap-4 mb-12 max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row gap-3 mb-8 max-w-4xl mx-auto">
           <div className="flex-1 relative">
-            <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-muted-foreground" />
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
             <Input
               type="text"
               placeholder="Search for your favorite anime..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="pl-12 pr-4 py-3 rounded-full border-card-border glass-card focus:ring-sakura-primary font-poppins"
+              className="pl-10 pr-4 py-2 rounded-full border-card-border glass-card focus:ring-sakura-primary font-poppins"
             />
           </div>
           <div className="flex gap-2 overflow-x-auto">
@@ -175,7 +175,7 @@ const AnimeSection = () => {
                 key={genre}
                 onClick={() => setSelectedGenre(genre)}
                 className={`
-                  whitespace-nowrap rounded-full px-6 py-3 transition-all duration-300
+                  whitespace-nowrap rounded-full px-4 py-2 transition-all duration-300 text-sm
                   ${selectedGenre === genre 
                     ? 'btn-purple' 
                     : 'glass-card hover:glass-card-hover text-foreground'

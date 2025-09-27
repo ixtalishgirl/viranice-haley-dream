@@ -37,15 +37,15 @@ const HeroSection = () => {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-haley-blue/10 rounded-full blur-2xl animate-glow-pulse"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 py-12 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* Hero Content */}
-          <div className="text-center lg:text-left space-y-8">
-            <div className="space-y-4">
-              <h1 className="haley-title leading-tight">
+          <div className="text-center lg:text-left space-y-6">
+            <div className="space-y-3">
+              <h1 className="haley-title leading-tight text-4xl md:text-6xl font-bold">
                 {heroTexts[currentText]}
               </h1>
-              <p className="text-xl text-muted-foreground max-w-2xl font-poppins">
+              <p className="text-base text-muted-foreground max-w-xl font-poppins">
                 Join <span className="magic-text font-semibold">Haley</span>, your magical AI assistant, 
                 in a world where anime dreams meet cutting-edge AI tools. Stream anime, create viral content, 
                 and discover the magic of technology! 🌟
@@ -53,35 +53,35 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-8 text-center">
-              <div className="glass-card p-4 rounded-xl">
-                <div className="text-2xl font-bold magic-text">32+</div>
-                <div className="text-sm text-muted-foreground">AI Tools</div>
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center">
+              <div className="glass-card p-3 rounded-xl">
+                <div className="text-lg font-bold magic-text">32+</div>
+                <div className="text-xs text-muted-foreground">AI Tools</div>
               </div>
-              <div className="glass-card p-4 rounded-xl">
-                <div className="text-2xl font-bold magic-text">1000+</div>
-                <div className="text-sm text-muted-foreground">Anime Titles</div>
+              <div className="glass-card p-3 rounded-xl">
+                <div className="text-lg font-bold magic-text">1000+</div>
+                <div className="text-xs text-muted-foreground">Anime Titles</div>
               </div>
-              <div className="glass-card p-4 rounded-xl">
-                <div className="text-2xl font-bold magic-text">∞</div>
-                <div className="text-sm text-muted-foreground">Magic Moments</div>
+              <div className="glass-card p-3 rounded-xl">
+                <div className="text-lg font-bold magic-text">∞</div>
+                <div className="text-xs text-muted-foreground">Magic Moments</div>
               </div>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button className="btn-sakura text-lg px-8 py-4">
-                <Play className="w-5 h-5 mr-2" />
+            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+              <Button className="btn-sakura text-base px-6 py-3">
+                <Play className="w-4 h-4 mr-2" />
                 Start Your Journey ✨
               </Button>
-              <Button className="btn-purple text-lg px-8 py-4">
-                <Wand2 className="w-5 h-5 mr-2" />
+              <Button className="btn-purple text-base px-6 py-3">
+                <Wand2 className="w-4 h-4 mr-2" />
                 Explore AI Tools
               </Button>
             </div>
 
             {/* Features */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-6 pt-8">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <div className="flex items-center space-x-2 text-sm">
                 <Sparkles className="w-4 h-4 text-neon-blue" />
                 <span>Free AI Tools</span>
@@ -99,7 +99,7 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-80 h-80 lg:w-96 lg:h-96">
+            <div className="relative w-72 h-72 lg:w-80 lg:h-80">
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
@@ -122,15 +122,15 @@ const HeroSection = () => {
               )}
 
               {/* Floating Elements */}
-              <div className="absolute top-10 right-10 text-4xl animate-float">🏔️</div>
-              <div className="absolute bottom-20 left-10 text-3xl animate-glow-pulse delay-500">💧</div>
-              <div className="absolute top-1/3 left-5 text-2xl animate-float delay-1000">🌲</div>
-              <div className="absolute bottom-10 right-20 text-3xl animate-glow-pulse delay-1500">✨</div>
+              <div className="absolute top-8 right-8 text-3xl animate-float">🌲</div>
+              <div className="absolute bottom-16 left-8 text-2xl animate-glow-pulse delay-500">🍃</div>
+              <div className="absolute top-1/3 left-4 text-xl animate-float delay-1000">🌿</div>
+              <div className="absolute bottom-8 right-16 text-2xl animate-glow-pulse delay-1500">✨</div>
               
               {/* Magical Circles */}
               <div className="absolute inset-0 border border-neon-blue/20 rounded-full animate-glow-pulse"></div>
-              <div className="absolute inset-8 border border-neon-green/20 rounded-full animate-glow-pulse delay-1000"></div>
-              <div className="absolute inset-16 border border-haley-blue/20 rounded-full animate-glow-pulse delay-2000"></div>
+              <div className="absolute inset-6 border border-neon-green/20 rounded-full animate-glow-pulse delay-1000"></div>
+              <div className="absolute inset-12 border border-haley-blue/20 rounded-full animate-glow-pulse delay-2000"></div>
             </div>
           </div>
         </div>

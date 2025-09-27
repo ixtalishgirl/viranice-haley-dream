@@ -7,7 +7,7 @@ import HaleyAssistant from '@/components/HaleyAssistant';
 import SakuraPetals from '@/components/SakuraPetals';
 import HaleyPopupChat from '@/components/HaleyPopupChat';
 import ClickAnimations from '@/components/ClickAnimations';
-import mountainRiverBg from '@/assets/mountain-river-bg.jpg';
+import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
 
 const Index = () => {
   const [showPopupChat, setShowPopupChat] = useState(false);
@@ -27,13 +27,13 @@ const Index = () => {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: `url(${mountainRiverBg})`,
+          backgroundImage: `url(${darkJungleBg})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/20 via-transparent to-neon-green/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-neon-blue/30 via-black/40 to-neon-green/30"></div>
       </div>
       
       {/* Magical overlay */}
@@ -52,26 +52,26 @@ const Index = () => {
           {/* Hero Section */}
           <HeroSection />
           
-          {/* Tools Section */}
-          <ToolsSection />
-          
           {/* Anime Section */}
           <AnimeSection />
+          
+          {/* Tools Section */}
+          <ToolsSection />
         
         {/* Footer */}
-        <footer className="py-16 relative">
-          <div className="container mx-auto px-6">
-            <div className="glass-card p-8 rounded-2xl text-center">
-              <h3 className="text-2xl font-bold magic-text mb-4">
+        <footer className="py-12 relative">
+          <div className="container mx-auto px-4">
+            <div className="glass-card p-6 rounded-2xl text-center">
+              <h3 className="text-xl font-bold magic-text mb-3">
                 Made with 💖 by Haley & the ViraLux Team
               </h3>
-              <p className="text-muted-foreground mb-6 max-w-2xl mx-auto font-poppins">
+              <p className="text-muted-foreground mb-4 max-w-xl mx-auto font-poppins text-sm">
                 ViraLux | Haley's Dreamland is where anime dreams come true and AI magic happens. 
                 Join our community of creators, dreamers, and anime lovers! ✨
               </p>
               
               {/* Footer Links */}
-              <div className="flex flex-wrap justify-center gap-6 text-sm">
+              <div className="flex flex-wrap justify-center gap-4 text-sm">
                 <a href="#" className="hover:text-neon-blue transition-colors">Privacy Policy</a>
                 <a href="#" className="hover:text-neon-blue transition-colors">Terms of Service</a>
                 <a href="#" className="hover:text-neon-blue transition-colors">Contact Us</a>
@@ -79,10 +79,10 @@ const Index = () => {
                 <a href="#" className="hover:text-neon-blue transition-colors">Blog</a>
               </div>
               
-              <div className="mt-8 pt-8 border-t border-border">
+              <div className="mt-6 pt-4 border-t border-border">
                 <p className="text-xs text-muted-foreground">
                   © 2024 ViraLux | Haley's Dreamland. All rights reserved. 
-                  <span className="ml-2">🏔️ Made with love and AI magic ✨</span>
+                  <span className="ml-2">🌲 Made with love and AI magic ✨</span>
                 </p>
               </div>
             </div>

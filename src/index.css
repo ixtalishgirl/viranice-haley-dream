@@ -110,9 +110,10 @@
     width: 100%;
     height: 100%;
     background: 
-      radial-gradient(circle at 20% 80%, hsl(var(--neon-blue) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 20%, hsl(var(--neon-green) / 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 40% 40%, hsl(var(--haley-blue) / 0.05) 0%, transparent 50%);
+      radial-gradient(circle at 20% 80%, hsl(var(--neon-blue) / 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 80% 20%, hsl(var(--neon-green) / 0.15) 0%, transparent 60%),
+      radial-gradient(circle at 40% 40%, hsl(var(--haley-blue) / 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 60% 70%, hsl(195 100% 65% / 0.08) 0%, transparent 40%);
     pointer-events: none;
     z-index: -1;
   }

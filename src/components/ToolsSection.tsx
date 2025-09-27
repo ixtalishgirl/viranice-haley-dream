@@ -153,27 +153,27 @@ const ToolsSection = () => {
     : tools.filter(tool => tool.category === selectedCategory);
 
   return (
-    <section id="tools" className="py-20 relative">
-      <div className="container mx-auto px-6">
+    <section id="tools" className="py-12 relative">
+      <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center space-y-6 mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold">
+        <div className="text-center space-y-4 mb-12">
+          <h2 className="text-3xl md:text-5xl font-bold">
             <span className="magic-text">Magical AI Tools</span> ✨
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-poppins">
+          <p className="text-base text-muted-foreground max-w-2xl mx-auto font-poppins">
             Discover 32+ powerful AI tools designed by Haley to make your content creation journey magical. 
             From viral prediction to copyright checking - we've got you covered! 🚀
           </p>
         </div>
 
         {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
           {categories.map((category) => (
             <Button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`
-                flex items-center space-x-2 rounded-full px-6 py-3 transition-all duration-300
+                flex items-center space-x-2 rounded-full px-4 py-2 transition-all duration-300 text-sm
                 ${selectedCategory === category.id 
                   ? 'btn-sakura' 
                   : 'glass-card hover:glass-card-hover text-foreground'
