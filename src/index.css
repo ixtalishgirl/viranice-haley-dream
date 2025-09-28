@@ -122,17 +122,12 @@
 @layer components {
   /* Glassmorphism Card System */
   .glass-card {
-    @apply backdrop-blur-sm rounded-2xl border border-card-border;
+    @apply rounded-2xl border border-card-border;
     background: hsl(var(--card));
-    box-shadow: var(--shadow-glass);
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-300 hover:scale-105;
-  }
-
-  .glass-card-hover:hover {
-    box-shadow: var(--shadow-glow);
+    @apply glass-card;
   }
 
   /* Magical Buttons */

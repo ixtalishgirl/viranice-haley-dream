@@ -72,43 +72,21 @@ const HaleyAssistant: React.FC<HaleyAssistantProps> = ({
       {/* Haley Character */}
       <div 
         onClick={handleClick}
-        className={`
-          relative w-32 h-32 rounded-full glass-card-hover float-element
-          ${isAnimating ? 'animate-glow-pulse' : ''}
-          bg-gradient-to-br from-haley-blue via-purple-primary to-sakura-primary
-          p-1
-        `}
+        className="relative w-32 h-32 rounded-full p-1"
       >
-        <div className="w-full h-full rounded-full bg-gradient-to-br from-white/20 to-white/10 backdrop-blur-sm flex items-center justify-center">
+        <div className="w-full h-full rounded-full bg-gradient-to-br from-white/20 to-white/10 flex items-center justify-center">
           {/* Haley's Avatar */}
           <div className="relative">
-            {/* Hair */}
-            <div className="absolute -top-6 -left-4 w-16 h-12 bg-haley-blue rounded-full opacity-80 blur-sm"></div>
-            <div className="absolute -top-4 -right-2 w-12 h-8 bg-haley-glow rounded-full opacity-60 blur-sm"></div>
-            
             {/* Face */}
             <div className="w-16 h-16 bg-gradient-to-b from-pink-100 to-pink-50 rounded-full relative border-2 border-white/30">
               {/* Eyes */}
               <div className="absolute top-4 left-3 flex space-x-2">
-                <div className={`w-2 h-2 bg-haley-blue rounded-full glow-element ${currentMood === 'winking' ? 'animate-pulse' : ''}`}></div>
-                <div className={`w-2 h-2 bg-haley-blue rounded-full glow-element ${currentMood === 'winking' ? 'opacity-30' : ''}`}></div>
+                <div className="w-2 h-2 bg-haley-blue rounded-full"></div>
+                <div className="w-2 h-2 bg-haley-blue rounded-full"></div>
               </div>
               
               {/* Mouth */}
-              <div className={`absolute top-7 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-sakura-primary rounded-full ${currentMood === 'excited' ? 'scale-125' : ''} transition-transform`}></div>
-              
-              {/* Blush */}
-              {currentMood === 'excited' && (
-                <>
-                  <div className="absolute top-5 left-1 w-2 h-1 bg-sakura-light rounded-full opacity-70"></div>
-                  <div className="absolute top-5 right-1 w-2 h-1 bg-sakura-light rounded-full opacity-70"></div>
-                </>
-              )}
-            </div>
-            
-            {/* Accessories */}
-            <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 text-yellow-300 text-xs glow-element">
-              ✨
+              <div className="absolute top-7 left-1/2 transform -translate-x-1/2 w-3 h-1 bg-sakura-primary rounded-full"></div>
             </div>
           </div>
         </div>

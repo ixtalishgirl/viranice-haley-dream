@@ -118,19 +118,19 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border">
           <div className="flex items-center space-x-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-neon-blue animate-glow-pulse">
+            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-neon-blue">
               <img 
                 src={haleyNew} 
                 alt="Haley Assistant" 
                 className="w-full h-full object-cover"
               />
               {/* Online status dot */}
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full animate-pulse"></div>
+              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
             </div>
             <div>
               <h3 className="font-semibold magic-text">Haley Assistant</h3>
               <p className="text-xs text-muted-foreground flex items-center">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-1 animate-pulse"></span>
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
                 Online & Ready to Help
               </p>
             </div>
@@ -157,12 +157,8 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="glass-card p-3 rounded-lg max-w-[200px] animate-float">
+              <div className="glass-card p-3 rounded-lg max-w-[200px]">
                 <p className="text-sm">{greetingMessages[currentMessage]}</p>
-                <div className="flex items-center space-x-1 mt-2">
-                  <Heart className="w-3 h-3 text-neon-green animate-glow-pulse" />
-                  <Sparkles className="w-3 h-3 text-neon-blue animate-glow-pulse delay-500" />
-                </div>
               </div>
             </div>
           )}
@@ -245,7 +241,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
             </Button>
           </div>
           <p className="text-xs text-center text-muted-foreground">
-            Click anywhere to explore my magical world! ✨
+            Ready to help with your questions! 💫
           </p>
         </div>
       </div>
