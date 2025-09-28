@@ -121,11 +121,9 @@ const HeroSection = () => {
                 </div>
               )}
 
-              {/* Floating Elements */}
-              <div className="absolute top-8 right-8 text-3xl animate-float">🌲</div>
-              <div className="absolute bottom-16 left-8 text-2xl animate-glow-pulse delay-500">🍃</div>
-              <div className="absolute top-1/3 left-4 text-xl animate-float delay-1000">🌿</div>
-              <div className="absolute bottom-8 right-16 text-2xl animate-glow-pulse delay-1500">✨</div>
+              {/* Subtle Background Elements - Not blocking view */}
+              <div className="absolute top-8 -right-4 text-xl animate-float opacity-30">🌲</div>
+              <div className="absolute bottom-16 -left-4 text-lg animate-glow-pulse delay-500 opacity-40">🍃</div>
               
               {/* Magical Circles */}
               <div className="absolute inset-0 border border-neon-blue/20 rounded-full animate-glow-pulse"></div>

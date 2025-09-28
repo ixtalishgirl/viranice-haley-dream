@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { Button } from '@/components/ui/button';
+import { MessageCircle } from 'lucide-react';
 import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
 import ToolsSection from '@/components/ToolsSection';
@@ -12,14 +14,13 @@ import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
 const Index = () => {
   const [showPopupChat, setShowPopupChat] = useState(false);
 
-  useEffect(() => {
-    // Show popup chat after 3 seconds
-    const timer = setTimeout(() => {
-      setShowPopupChat(true);
-    }, 3000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  // Chat popup is now controlled manually by user
+  // useEffect(() => {
+  //   const timer = setTimeout(() => {
+  //     setShowPopupChat(true);
+  //   }, 3000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   return (
     <div className="min-h-screen relative overflow-x-hidden">
@@ -90,8 +91,16 @@ const Index = () => {
         </footer>
         </main>
         
-        {/* Floating Haley Assistant */}
+        {/* Floating Haley Assistant with Chat Toggle */}
         <HaleyAssistant />
+        
+        {/* Chat Toggle Button */}
+        <Button
+          onClick={() => setShowPopupChat(true)}
+          className="fixed bottom-8 left-8 z-40 btn-sakura rounded-full p-4"
+        >
+          <MessageCircle className="w-6 h-6" />
+        </Button>
       </div>
       
       {/* Popup Chat */}

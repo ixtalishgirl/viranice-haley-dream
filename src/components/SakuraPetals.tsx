@@ -14,7 +14,7 @@ const SakuraPetals: React.FC = () => {
   useEffect(() => {
     const createPetals = () => {
       const newPetals: Petal[] = [];
-      for (let i = 0; i < 15; i++) {
+      for (let i = 0; i < 8; i++) {
         newPetals.push({
           id: i,
           left: Math.random() * 100,
@@ -34,7 +34,7 @@ const SakuraPetals: React.FC = () => {
       {petals.map((petal) => (
         <div
           key={petal.id}
-          className="absolute animate-sakura-fall opacity-60"
+          className="absolute animate-sakura-fall opacity-30"
           style={{
             left: `${petal.left}%`,
             animationDuration: `${petal.animationDuration}s`,
