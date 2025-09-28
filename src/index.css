@@ -122,7 +122,7 @@
 @layer components {
   /* Glassmorphism Card System */
   .glass-card {
-    @apply backdrop-blur-xl rounded-2xl border border-card-border;
+    @apply backdrop-blur-sm rounded-2xl border border-card-border;
     background: hsl(var(--card));
     box-shadow: var(--shadow-glass);
   }

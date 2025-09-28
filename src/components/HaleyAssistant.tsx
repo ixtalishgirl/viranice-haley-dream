@@ -112,15 +112,7 @@ const HaleyAssistant: React.FC<HaleyAssistantProps> = ({
             </div>
           </div>
         </div>
-        
-        {/* Magical aura */}
-        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-sakura-primary/20 to-haley-blue/20 blur-xl animate-glow-pulse"></div>
       </div>
-      
-      {/* Floating sparkles */}
-      <div className="absolute -top-2 -left-2 text-yellow-300 animate-glow-pulse">✨</div>
-      <div className="absolute -bottom-1 -right-1 text-pink-300 animate-float">🌸</div>
-      <div className="absolute top-1/2 -left-6 text-purple-300 animate-glow-pulse delay-1000">⭐</div>
     </div>
   );
 };

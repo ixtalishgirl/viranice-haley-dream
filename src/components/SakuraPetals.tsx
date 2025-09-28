@@ -30,11 +30,11 @@ const SakuraPetals: React.FC = () => {
   }, []);
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-10 overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-5 overflow-hidden">
       {petals.map((petal) => (
         <div
           key={petal.id}
-          className="absolute animate-sakura-fall opacity-30"
+          className="absolute animate-sakura-fall opacity-10"
           style={{
             left: `${petal.left}%`,
             animationDuration: `${petal.animationDuration}s`,
