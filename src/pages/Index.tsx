@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { MessageCircle } from 'lucide-react';
+import { Helmet } from 'react-helmet';
 import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
 import ToolsSection from '@/components/ToolsSection';
@@ -9,8 +11,8 @@ import HaleyAssistant from '@/components/HaleyAssistant';
 import SakuraPetals from '@/components/SakuraPetals';
 import HaleyPopupChat from '@/components/HaleyPopupChat';
 import ClickAnimations from '@/components/ClickAnimations';
+import JellyClick from '@/components/JellyClick';
 import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
-import ThemeSettings from '@/components/ThemeSettings';
 
 const Index = () => {
   const [showPopupChat, setShowPopupChat] = useState(false);
@@ -24,7 +26,18 @@ const Index = () => {
   // }, []);
 
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <>
+      <Helmet>
+        <title>ViraLux | Haley's Dreamland - AI-Powered Content Creation Tools</title>
+        <meta name="description" content="Transform your content creation with ViraLux AI tools. Generate viral YouTube titles, predict content success, and explore anime with Haley's magical assistant." />
+        <meta name="keywords" content="AI tools, viral content, YouTube titles, content creation, anime, AI assistant, viral prediction" />
+        <meta property="og:title" content="ViraLux | Haley's Dreamland - AI Content Creation" />
+        <meta property="og:description" content="AI-powered tools for viral content creation and anime discovery" />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://viralux.lovable.app" />
+      </Helmet>
+      
+      <div className="min-h-screen relative overflow-x-hidden">
       {/* Beautiful Mountain River Background */}
       <div 
         className="fixed inset-0 z-0"
@@ -45,6 +58,7 @@ const Index = () => {
         
         {/* Click Animations */}
         <ClickAnimations />
+        <JellyClick />
         
         {/* Navigation */}
         <MagicalNavigation />
@@ -74,11 +88,11 @@ const Index = () => {
               
               {/* Footer Links */}
               <div className="flex flex-wrap justify-center gap-4 text-sm">
-                <a href="#" className="hover:text-neon-blue transition-colors">Privacy Policy</a>
-                <a href="#" className="hover:text-neon-blue transition-colors">Terms of Service</a>
-                <a href="#" className="hover:text-neon-blue transition-colors">Contact Us</a>
-                <a href="#" className="hover:text-neon-blue transition-colors">Support</a>
-                <a href="#" className="hover:text-neon-blue transition-colors">Blog</a>
+                <Link to="/privacy" className="hover:text-neon-blue transition-colors">Privacy Policy</Link>
+                <Link to="/terms" className="hover:text-neon-blue transition-colors">Terms of Service</Link>
+                <Link to="/contact" className="hover:text-neon-blue transition-colors">Contact Us</Link>
+                <a href="mailto:viraluxsuppurt@gmail.com" className="hover:text-neon-blue transition-colors">Support</a>
+                <Link to="/blog" className="hover:text-neon-blue transition-colors">Blog</Link>
               </div>
               
               <div className="mt-6 pt-4 border-t border-border">
@@ -98,12 +112,10 @@ const Index = () => {
         {/* Chat Toggle Button */}
         <Button
           onClick={() => setShowPopupChat(true)}
-          className="fixed bottom-8 left-8 z-40 btn-sakura rounded-full p-4"
+          className="fixed bottom-8 left-8 z-40 btn-sakura rounded-full p-4 hover:scale-110 transition-transform animate-float"
         >
           <MessageCircle className="w-6 h-6" />
         </Button>
-
-        <ThemeSettings />
       </div>
       
       {/* Popup Chat */}
@@ -111,7 +123,8 @@ const Index = () => {
         isOpen={showPopupChat}
         onClose={() => setShowPopupChat(false)}
       />
-    </div>
+      </div>
+    </>
   );
 };
 

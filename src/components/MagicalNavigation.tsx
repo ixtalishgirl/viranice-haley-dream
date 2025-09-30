@@ -1,10 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Search, Menu, X, Sparkles, Heart, Wand2 } from 'lucide-react';
+import { Search, Menu, X, Sparkles, Heart, Wand2, Settings } from 'lucide-react';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
+
+const themes = [
+  { id: 'default', label: 'Default' },
+  { id: 'dark', label: 'Dark' },
+  { id: 'horror', label: 'Horror' },
+  { id: 'nightmare', label: 'Nightmare' },
+];
+
+const applyTheme = (id: string) => {
+  const root = document.documentElement;
+  root.classList.remove('dark', 'theme-horror', 'theme-nightmare');
+  if (id === 'dark') root.classList.add('dark');
+  if (id === 'horror') root.classList.add('theme-horror');
+  if (id === 'nightmare') root.classList.add('theme-nightmare');
+};
 
 const MagicalNavigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState<string>(() => localStorage.getItem('theme') || 'default');
+
+  useEffect(() => {
+    applyTheme(currentTheme);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +35,12 @@ const MagicalNavigation = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const handleThemeSelect = (id: string) => {
+    setCurrentTheme(id);
+    applyTheme(id);
+    localStorage.setItem('theme', id);
+  };
 
   const navItems = [
     { name: 'Home', icon: <Sparkles className="w-4 h-4" />, href: '#home' },
@@ -25,7 +52,7 @@ const MagicalNavigation = () => {
   return (
     <nav className={`
       fixed top-0 left-0 right-0 z-40 transition-all duration-300
-      ${isScrolled ? 'backdrop-blur-xl bg-card/80' : 'bg-transparent'}
+      ${isScrolled ? 'bg-card/90' : 'bg-transparent'}
     `}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
@@ -61,12 +88,28 @@ const MagicalNavigation = () => {
               <input
                 type="text"
                 placeholder="Search anime, tools..."
-                className="pl-10 pr-4 py-2 rounded-full border border-border bg-background/50 backdrop-blur-sm focus:outline-none focus:ring-2 focus:ring-sakura-primary font-poppins"
+                className="pl-10 pr-4 py-2 rounded-full border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-sakura-primary font-poppins"
               />
             </div>
             <Button className="btn-sakura">
               Get Started ✨
             </Button>
+            
+            {/* Theme Settings */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button className="btn-sakura rounded-full p-3" aria-label="Theme settings">
+                  <Settings className="w-5 h-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end" className="glass-card p-2">
+                {themes.map(t => (
+                  <DropdownMenuItem key={t.id} onClick={() => handleThemeSelect(t.id)} className="cursor-pointer">
+                    <span className={currentTheme === t.id ? 'font-semibold' : ''}>{t.label}</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Mobile Menu Button */}

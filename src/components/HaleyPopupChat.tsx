@@ -113,20 +113,22 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/10 z-50 animate-fade-in">
-      <div className="fixed bottom-4 right-4 w-80 glass-card animate-scale-in">
+    <div className="fixed inset-0 bg-black/50 z-50 animate-fade-in flex items-center justify-center p-4">
+      <div className="w-full max-w-4xl h-[90vh] glass-card animate-scale-in flex flex-col">
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-border">
+        <div className="flex items-center justify-between p-6 border-b border-border flex-shrink-0">
           <div className="flex items-center space-x-3">
-            <div className="relative w-10 h-10 rounded-full overflow-hidden border-2 border-neon-blue">
+            <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-neon-blue">
               <img 
                 src={haleyNew} 
                 alt="Haley Assistant" 
                 className="w-full h-full object-cover"
               />
+              <div className="absolute bottom-0 right-0 w-3 h-3 bg-neon-green rounded-full border-2 border-background"></div>
             </div>
             <div>
-              <h3 className="font-semibold">Haley Assistant</h3>
+              <h3 className="font-semibold text-lg">Haley Assistant</h3>
+              <p className="text-xs text-neon-green">● Online</p>
             </div>
           </div>
           <Button
@@ -135,12 +137,12 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
             onClick={handleClose}
             className="hover:bg-destructive/10"
           >
-            <X className="w-4 h-4" />
+            <X className="w-5 h-5" />
           </Button>
         </div>
 
         {/* Chat Content */}
-        <div className="p-4 space-y-4 max-h-64 overflow-y-auto">
+        <div className="flex-1 p-6 space-y-4 overflow-y-auto">
           {/* Greeting Message */}
           {showGreeting && messages.length === 0 && (
             <div className="flex items-start space-x-3 animate-fade-in">
@@ -180,7 +182,39 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
           <div ref={messagesEndRef} />
         </div>
 
-
+        {/* Message Input */}
+        <div className="p-4 border-t border-border flex-shrink-0">
+          <div className="flex items-end space-x-2">
+            <input
+              type="file"
+              ref={fileInputRef}
+              onChange={handleFileChange}
+              className="hidden"
+            />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={handleFileUpload}
+              className="hover:bg-accent/10"
+            >
+              <Paperclip className="w-5 h-5" />
+            </Button>
+            <Input
+              value={inputMessage}
+              onChange={(e) => setInputMessage(e.target.value)}
+              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
+              placeholder="Type your message..."
+              className="flex-1 bg-background/50"
+            />
+            <Button
+              onClick={handleSendMessage}
+              className="btn-sakura"
+              disabled={!inputMessage.trim()}
+            >
+              <Send className="w-5 h-5" />
+            </Button>
+          </div>
+        </div>
       </div>
     </div>
   );
