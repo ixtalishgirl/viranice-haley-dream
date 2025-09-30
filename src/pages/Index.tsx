@@ -10,6 +10,7 @@ import SakuraPetals from '@/components/SakuraPetals';
 import HaleyPopupChat from '@/components/HaleyPopupChat';
 import ClickAnimations from '@/components/ClickAnimations';
 import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
+import ThemeSettings from '@/components/ThemeSettings';
 
 const Index = () => {
   const [showPopupChat, setShowPopupChat] = useState(false);
@@ -40,7 +41,7 @@ const Index = () => {
       {/* Magical overlay */}
       <div className="magic-bg">
         {/* Animated Background Effects */}
-        <SakuraPetals />
+        
         
         {/* Click Animations */}
         <ClickAnimations />
@@ -101,6 +102,8 @@ const Index = () => {
         >
           <MessageCircle className="w-6 h-6" />
         </Button>
+
+        <ThemeSettings />
       </div>
       
       {/* Popup Chat */}

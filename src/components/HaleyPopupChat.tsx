@@ -124,15 +124,9 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                 alt="Haley Assistant" 
                 className="w-full h-full object-cover"
               />
-              {/* Online status dot */}
-              <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
             </div>
             <div>
               <h3 className="font-semibold">Haley Assistant</h3>
-              <p className="text-xs text-muted-foreground flex items-center">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                Online
-              </p>
             </div>
           </div>
           <Button
@@ -186,61 +180,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
           <div ref={messagesEndRef} />
         </div>
 
-        {/* Message Input */}
-        <div className="p-4 border-t border-border">
-          <div className="flex items-center space-x-2">
-            <Input
-              value={inputMessage}
-              onChange={(e) => setInputMessage(e.target.value)}
-              placeholder="Type your message..."
-              className="flex-1 text-sm bg-background/50"
-              onKeyPress={(e) => e.key === 'Enter' && handleSendMessage()}
-            />
-            <Button
-              size="sm"
-              onClick={handleFileUpload}
-              className="btn-purple p-2"
-            >
-              <Paperclip className="w-4 h-4" />
-            </Button>
-            <Button
-              size="sm"
-              onClick={handleSendMessage}
-              className="btn-sakura p-2"
-            >
-              <Send className="w-4 h-4" />
-            </Button>
-          </div>
-          <input
-            ref={fileInputRef}
-            type="file"
-            onChange={handleFileChange}
-            className="hidden"
-            accept="*/*"
-          />
-        </div>
 
-        {/* Quick Actions */}
-        <div className="p-4 border-t border-border space-y-2">
-          <div className="grid grid-cols-2 gap-2">
-            <Button 
-              size="sm" 
-              className="btn-sakura text-xs"
-              onClick={() => document.getElementById('tools')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Sparkles className="w-3 h-3 mr-1" />
-              Explore Tools
-            </Button>
-            <Button 
-              size="sm" 
-              className="btn-purple text-xs"
-              onClick={() => document.getElementById('anime')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              <Heart className="w-3 h-3 mr-1" />
-              Watch Anime
-            </Button>
-          </div>
-        </div>
       </div>
     </div>
   );
