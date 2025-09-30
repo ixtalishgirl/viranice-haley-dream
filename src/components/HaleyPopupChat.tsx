@@ -128,10 +128,10 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
               <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 border-2 border-white rounded-full"></div>
             </div>
             <div>
-              <h3 className="font-semibold magic-text">Haley Assistant</h3>
+              <h3 className="font-semibold">Haley Assistant</h3>
               <p className="text-xs text-muted-foreground flex items-center">
                 <span className="w-2 h-2 bg-green-500 rounded-full mr-1"></span>
-                Online & Ready to Help
+                Online
               </p>
             </div>
           </div>
@@ -240,9 +240,6 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
               Watch Anime
             </Button>
           </div>
-          <p className="text-xs text-center text-muted-foreground">
-            Ready to help with your questions! 💫
-          </p>
         </div>
       </div>
     </div>
