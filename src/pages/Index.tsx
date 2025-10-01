@@ -7,15 +7,22 @@ import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
 import ToolsSection from '@/components/ToolsSection';
 import AnimeSection from '@/components/AnimeSection';
-import HaleyAssistant from '@/components/HaleyAssistant';
-import SakuraPetals from '@/components/SakuraPetals';
-import HaleyPopupChat from '@/components/HaleyPopupChat';
 import ClickAnimations from '@/components/ClickAnimations';
 import JellyClick from '@/components/JellyClick';
+import ThemeBackground3D from '@/components/ThemeBackground3D';
 import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
 
 const Index = () => {
-  const [showPopupChat, setShowPopupChat] = useState(false);
+  const [currentTheme, setCurrentTheme] = useState('dark');
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => {
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      setCurrentTheme(theme);
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+    return () => observer.disconnect();
+  }, []);
 
   // Chat popup is now controlled manually by user
   // useEffect(() => {
@@ -59,6 +66,7 @@ const Index = () => {
         {/* Click Animations */}
         <ClickAnimations />
         <JellyClick />
+        <ThemeBackground3D theme={currentTheme} />
         
         {/* Navigation */}
         <MagicalNavigation />
@@ -106,23 +114,8 @@ const Index = () => {
         </footer>
         </main>
         
-        {/* Floating Haley Assistant with Chat Toggle */}
-        <HaleyAssistant />
-        
-        {/* Chat Toggle Button */}
-        <Button
-          onClick={() => setShowPopupChat(true)}
-          className="fixed bottom-8 left-8 z-40 btn-sakura rounded-full p-4 hover:scale-110 transition-transform animate-float"
-        >
-          <MessageCircle className="w-6 h-6" />
-        </Button>
+        {/* Haley chat removed as requested */}
       </div>
-      
-      {/* Popup Chat */}
-      <HaleyPopupChat 
-        isOpen={showPopupChat}
-        onClose={() => setShowPopupChat(false)}
-      />
       </div>
     </>
   );

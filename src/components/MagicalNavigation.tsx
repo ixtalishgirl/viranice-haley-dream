@@ -4,18 +4,23 @@ import { Search, Menu, X, Sparkles, Heart, Wand2, Settings } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu';
 
 const themes = [
-  { id: 'default', label: 'Default' },
-  { id: 'dark', label: 'Dark' },
-  { id: 'horror', label: 'Horror' },
-  { id: 'nightmare', label: 'Nightmare' },
+  { id: 'default', label: '☀️ Light', icon: '☀️' },
+  { id: 'dark', label: '🌙 Dark', icon: '🌙' },
+  { id: 'horror', label: '👻 Horror', icon: '👻' },
+  { id: 'nightmare', label: '💀 Nightmare', icon: '💀' },
+  { id: 'rain', label: '🌧️ Rain Scene', icon: '🌧️' },
+  { id: '3d-forest', label: '🌲 Forest Dream', icon: '🌲' },
+  { id: 'cyberpunk', label: '🌆 Cyberpunk', icon: '🌆' },
+  { id: 'galaxy', label: '🌌 Galaxy', icon: '🌌' },
+  { id: 'ocean', label: '🌊 Ocean', icon: '🌊' },
 ];
 
 const applyTheme = (id: string) => {
   const root = document.documentElement;
-  root.classList.remove('dark', 'theme-horror', 'theme-nightmare');
+  root.removeAttribute('data-theme');
+  root.classList.remove('dark');
+  if (id !== 'default') root.setAttribute('data-theme', id);
   if (id === 'dark') root.classList.add('dark');
-  if (id === 'horror') root.classList.add('theme-horror');
-  if (id === 'nightmare') root.classList.add('theme-nightmare');
 };
 
 const MagicalNavigation = () => {
@@ -102,10 +107,13 @@ const MagicalNavigation = () => {
                   <Settings className="w-5 h-5" />
                 </Button>
               </DropdownMenuTrigger>
-              <DropdownMenuContent align="end" className="glass-card p-2">
+              <DropdownMenuContent align="end" className="glass-card p-3 w-56">
+                <div className="text-xs font-semibold mb-2 text-muted-foreground px-2">Choose Theme</div>
                 {themes.map(t => (
-                  <DropdownMenuItem key={t.id} onClick={() => handleThemeSelect(t.id)} className="cursor-pointer">
-                    <span className={currentTheme === t.id ? 'font-semibold' : ''}>{t.label}</span>
+                  <DropdownMenuItem key={t.id} onClick={() => handleThemeSelect(t.id)} className="cursor-pointer py-2">
+                    <span className={`flex items-center gap-2 ${currentTheme === t.id ? 'font-bold text-neon-blue' : ''}`}>
+                      {t.label}
+                    </span>
                   </DropdownMenuItem>
                 ))}
               </DropdownMenuContent>
