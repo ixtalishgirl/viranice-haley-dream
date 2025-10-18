@@ -2,11 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
+import HaleyOutfitChanger from './HaleyOutfitChanger';
 import haleyNew from '@/assets/haley-new.jpg';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const [showHaley, setShowHaley] = useState(false);
+  const [outfitFilter, setOutfitFilter] = useState('hue-rotate(0deg) saturate(1.2)');
 
   const heroTexts = [
     "Welcome to Haley's Magical Dreamland! ✨",
@@ -60,7 +62,7 @@ const HeroSection = () => {
               </div>
               <div className="glass-card p-3 rounded-xl">
                 <div className="text-lg font-bold magic-text">1000+</div>
-                <div className="text-xs text-muted-foreground">Anime Titles</div>
+                <div className="text-xs text-muted-foreground">Anime Shows</div>
               </div>
               <div className="glass-card p-3 rounded-xl">
                 <div className="text-lg font-bold magic-text">∞</div>
@@ -100,12 +102,16 @@ const HeroSection = () => {
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 lg:w-80 lg:h-80">
+              {/* Outfit Color Changer */}
+              <HaleyOutfitChanger onColorChange={setOutfitFilter} />
+              
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
                   src={haleyNew} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float"
+                  className="w-full h-full object-cover animate-float transition-all duration-500"
+                  style={{ filter: outfitFilter }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
               </div>

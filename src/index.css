@@ -78,14 +78,16 @@
   }
 
   .dark {
-    --background: 260 15% 8%;
-    --foreground: 320 100% 95%;
-    --sakura-primary: 330 81% 75%;
-    --purple-primary: 270 50% 80%;
-    --card: 0 0% 0% / 0.3;
-    --glass-bg: 0 0% 0% / 0.2;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
+    --background: 260 15% 5%;
+    --foreground: 320 100% 98%;
+    --sakura-primary: 330 81% 70%;
+    --purple-primary: 270 60% 75%;
+    --card: 0 0% 0% / 0.5;
+    --glass-bg: 0 0% 0% / 0.4;
+    --border: 217.2 32.6% 25%;
+    --input: 217.2 32.6% 20%;
+    --neon-blue: 195 100% 70%;
+    --neon-green: 120 100% 65%;
   }
 }
 
@@ -223,38 +225,38 @@
 }
 
 /* Theme Variants */
-.theme-horror {
-  --background: 0 0% 5%;
-  --foreground: 0 0% 98%;
-  --neon-blue: 0 84% 55%;
-  --neon-blue-light: 0 84% 65%;
-  --neon-green: 30 100% 55%;
-  --neon-green-light: 30 100% 65%;
-  --haley-blue: 0 84% 55%;
-  --haley-glow: 0 84% 65%;
-  --card: 0 0% 10% / 0.6;
+[data-theme="horror"] {
+  --background: 0 0% 3%;
+  --foreground: 0 100% 98%;
+  --neon-blue: 0 100% 55%;
+  --neon-blue-light: 0 100% 70%;
+  --neon-green: 120 100% 45%;
+  --neon-green-light: 120 100% 60%;
+  --haley-blue: 0 100% 55%;
+  --haley-glow: 0 100% 70%;
+  --card: 0 20% 8% / 0.9;
   --card-foreground: 0 0% 98%;
-  --glass-bg: 0 0% 0% / 0.25;
-  --border: 0 0% 20%;
-  --primary: 0 84% 55%;
-  --secondary: 30 100% 55%;
+  --glass-bg: 0 50% 5% / 0.5;
+  --border: 0 20% 20%;
+  --primary: 0 100% 55%;
+  --secondary: 120 100% 45%;
   --muted-foreground: 0 0% 70%;
 }
 
-.theme-nightmare {
-  --background: 260 20% 6%;
-  --foreground: 260 15% 96%;
-  --neon-blue: 260 100% 75%;
-  --neon-blue-light: 260 100% 85%;
-  --neon-green: 290 90% 70%;
-  --neon-green-light: 290 90% 80%;
-  --haley-blue: 260 100% 75%;
-  --haley-glow: 260 100% 85%;
-  --card: 0 0% 0% / 0.5;
-  --card-foreground: 260 15% 96%;
-  --glass-bg: 0 0% 0% / 0.2;
-  --border: 260 15% 25%;
-  --primary: 260 100% 75%;
-  --secondary: 290 90% 70%;
-  --muted-foreground: 260 10% 70%;
+[data-theme="nightmare"] {
+  --background: 270 100% 2%;
+  --foreground: 280 100% 95%;
+  --neon-blue: 280 100% 60%;
+  --neon-blue-light: 280 100% 75%;
+  --neon-green: 300 100% 55%;
+  --neon-green-light: 300 100% 70%;
+  --haley-blue: 280 100% 60%;
+  --haley-glow: 280 100% 75%;
+  --card: 270 60% 6% / 0.95;
+  --card-foreground: 280 100% 95%;
+  --glass-bg: 270 80% 4% / 0.6;
+  --border: 270 40% 25%;
+  --primary: 280 100% 60%;
+  --secondary: 300 100% 55%;
+  --muted-foreground: 270 20% 70%;
 }

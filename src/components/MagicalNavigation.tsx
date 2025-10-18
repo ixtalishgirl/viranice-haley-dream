@@ -49,9 +49,9 @@ const MagicalNavigation = () => {
 
   const navItems = [
     { name: 'Home', icon: <Sparkles className="w-4 h-4" />, href: '#home' },
-    { name: 'AI Tools', icon: <Wand2 className="w-4 h-4" />, href: '#tools' },
     { name: 'Anime', icon: <Heart className="w-4 h-4" />, href: '#anime' },
-    { name: 'Haley Chat', icon: <Sparkles className="w-4 h-4" />, href: '#haley' },
+    { name: 'Games', icon: <Sparkles className="w-4 h-4" />, href: '#games' },
+    { name: 'AI Tools', icon: <Wand2 className="w-4 h-4" />, href: '#tools' },
   ];
 
   return (

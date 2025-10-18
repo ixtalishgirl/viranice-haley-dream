@@ -7,6 +7,7 @@ import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
 import ToolsSection from '@/components/ToolsSection';
 import AnimeSection from '@/components/AnimeSection';
+import GamesSection from '@/components/games/GamesSection';
 import ClickAnimations from '@/components/ClickAnimations';
 import JellyClick from '@/components/JellyClick';
 import ThemeBackground3D from '@/components/ThemeBackground3D';
@@ -78,6 +79,9 @@ const Index = () => {
           
           {/* Anime Section */}
           <AnimeSection />
+          
+          {/* Games Section */}
+          <GamesSection />
           
           {/* Tools Section */}
           <ToolsSection />
