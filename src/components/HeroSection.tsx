@@ -2,13 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
-import HaleyOutfitChanger from './HaleyOutfitChanger';
+import HaleyGameInvite from './HaleyGameInvite';
 import haleyNew from '@/assets/haley-new.jpg';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const [showHaley, setShowHaley] = useState(false);
-  const [outfitFilter, setOutfitFilter] = useState('hue-rotate(0deg) saturate(1.2)');
 
   const heroTexts = [
     "Welcome to Haley's Magical Dreamland! ✨",
@@ -102,8 +101,8 @@ const HeroSection = () => {
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 lg:w-80 lg:h-80">
-              {/* Outfit Color Changer */}
-              <HaleyOutfitChanger onColorChange={setOutfitFilter} />
+              {/* Game Invite Popup */}
+              <HaleyGameInvite />
               
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
@@ -111,9 +110,11 @@ const HeroSection = () => {
                   src={haleyNew} 
                   alt="Haley - Your magical AI assistant" 
                   className="w-full h-full object-cover animate-float transition-all duration-500"
-                  style={{ filter: outfitFilter }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
+                
+                {/* Green Online Dot */}
+                <div className="absolute top-4 right-4 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-lg"></div>
               </div>
 
               {/* Interactive Haley Assistant */}

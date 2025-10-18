@@ -50,7 +50,6 @@ const MagicalNavigation = () => {
   const navItems = [
     { name: 'Home', icon: <Sparkles className="w-4 h-4" />, href: '#home' },
     { name: 'Anime', icon: <Heart className="w-4 h-4" />, href: '#anime' },
-    { name: 'Games', icon: <Sparkles className="w-4 h-4" />, href: '#games' },
     { name: 'AI Tools', icon: <Wand2 className="w-4 h-4" />, href: '#tools' },
   ];
 
