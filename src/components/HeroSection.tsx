@@ -104,11 +104,8 @@ const HeroSection = () => {
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 lg:w-80 lg:h-80">
-              {/* Game Invite Popup + Outfit Changer */}
+              {/* Game Invite Popup - Outside Circle */}
               <HaleyGameInvite />
-              <div className="absolute -top-2 -left-2 z-20">
-                <HaleyOutfitChanger onOutfitChange={setHaleyImage} />
-              </div>
               
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
@@ -121,6 +118,11 @@ const HeroSection = () => {
                 
                 {/* Green Online Dot */}
                 <div className="absolute top-4 right-4 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-lg"></div>
+                
+                {/* Outfit Changer - Inside Circle */}
+                <div className="absolute top-2 left-2 z-20">
+                  <HaleyOutfitChanger onOutfitChange={setHaleyImage} />
+                </div>
               </div>
 
               {/* Interactive Haley Assistant */}

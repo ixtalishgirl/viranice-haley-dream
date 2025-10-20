@@ -19,11 +19,12 @@ const HaleyOutfitChanger: React.FC<HaleyOutfitChangerProps> = ({ onOutfitChange 
 
   const handleSelect = (index: number) => {
     setSelected(index);
+    setIsOpen(false);
     onOutfitChange?.(outfits[index].src);
   };
 
   return (
-    <div className="absolute top-2 right-2 z-20">
+    <div className="absolute top-2 left-2 z-20">
       <Button
         onClick={() => setIsOpen(!isOpen)}
         className="btn-sakura rounded-full p-2 shadow-lg"
@@ -33,16 +34,16 @@ const HaleyOutfitChanger: React.FC<HaleyOutfitChangerProps> = ({ onOutfitChange 
       </Button>
 
       {isOpen && (
-        <div className="absolute top-12 right-0 glass-card p-3 rounded-2xl shadow-xl animate-scale-in w-44">
+        <div className="absolute top-12 left-0 glass-card p-3 rounded-2xl shadow-xl animate-scale-in w-44">
           <p className="text-xs font-semibold mb-2 text-center">Haley's Outfits</p>
           <div className="flex flex-col gap-2">
             {outfits.map((o, index) => (
               <button
                 key={index}
                 onClick={() => handleSelect(index)}
-                className={`flex items-center gap-2 p-2 rounded-lg transition-all duration-300 ${selected === index ? 'bg-primary/20 scale-105' : 'hover:bg-accent/10'}`}
+                className={`flex items-center gap-2 p-2 rounded-lg transition-all duration-300 ${selected === index ? 'bg-primary/20 scale-105 border-2 border-primary' : 'hover:bg-accent/10'}`}
               >
-                <img src={o.src} alt={o.name} className="w-8 h-8 rounded-full object-cover border" />
+                <img src={o.src} alt={o.name} className="w-8 h-8 rounded-full object-cover border-2" />
                 <span className="text-xs font-medium whitespace-nowrap">{o.name}</span>
               </button>
             ))}

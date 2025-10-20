@@ -11,43 +11,40 @@ const HaleyGameInvite = () => {
 
   return (
     <>
-      {/* Popup Bubble outside Haley */}
-      <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-20 animate-scale-in">
+      {/* Small Popup Bubble outside Haley's Circle */}
+      <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-30 animate-scale-in">
         <div className="relative">
-          {/* Speech Bubble */}
-          <div className="bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 px-6 py-4 rounded-3xl shadow-2xl relative animate-glow-pulse">
+          {/* Small Speech Bubble */}
+          <div className="bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 px-4 py-3 rounded-2xl shadow-2xl relative animate-glow-pulse">
             {/* Close button */}
             <button
               onClick={() => setShowInvite(false)}
-              className="absolute -top-2 -right-2 w-6 h-6 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
+              className="absolute -top-1 -right-1 w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
             >
-              <X className="w-4 h-4 text-pink-600" />
+              <X className="w-3 h-3 text-pink-600" />
             </button>
             
             {/* Green Online Dot */}
-            <div className="absolute -top-1 -left-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+            <div className="absolute -top-1 -left-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
             
             {/* Message */}
             <div className="text-white text-center">
-              <div className="text-lg font-bold mb-1 animate-bounce">
+              <div className="text-sm font-bold mb-2">
                 Wanna play games with me? 🎮
-              </div>
-              <div className="text-sm opacity-90 mb-3">
-                Challenge me in awesome games! 💖
               </div>
               <Button
                 onClick={() => {
                   setShowInvite(false);
                   setShowGames(true);
                 }}
-                className="bg-white text-pink-600 hover:bg-pink-50 font-bold px-6 py-2 rounded-full shadow-lg"
+                className="bg-white text-pink-600 hover:bg-pink-50 font-bold px-4 py-1.5 rounded-full shadow-lg text-xs"
               >
                 Let's Play! 🎉
               </Button>
             </div>
 
             {/* Bubble Tail pointing to Haley */}
-            <div className="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-8 border-r-8 border-t-8 border-l-transparent border-r-transparent border-t-pink-600"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-pink-600"></div>
           </div>
         </div>
       </div>
