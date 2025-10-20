@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* ViraLux | Haley's Dreamland - Magical Anime Design System */
 
@@ -193,11 +193,20 @@
     animation: glow-pulse 2s ease-in-out infinite;
   }
 
-  .float-element {
-    animation: float 3s ease-in-out infinite;
-  }
+.float-element {
+  animation: float 3s ease-in-out infinite;
+}
 
-  /* Jelly Click Animation */
+/* Float keyframes and utilities */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float { animation: float 3.5s ease-in-out infinite; }
+.animate-float-slow { animation: float 7s ease-in-out infinite; }
+
+/* Jelly Click Animation */
   @keyframes jelly {
     0%, 100% { transform: scale(1, 1); }
     25% { transform: scale(0.9, 1.1); }

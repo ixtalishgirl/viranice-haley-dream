@@ -3,11 +3,14 @@ import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
 import HaleyGameInvite from './HaleyGameInvite';
+import HaleyOutfitChanger from './HaleyOutfitChanger';
 import haleyNew from '@/assets/haley-new.jpg';
+import haleyHero from '@/assets/haley-hero.jpg';
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const [showHaley, setShowHaley] = useState(false);
+  const [haleyImage, setHaleyImage] = useState(haleyNew);
 
   const heroTexts = [
     "Welcome to Haley's Magical Dreamland! ✨",
@@ -101,15 +104,18 @@ const HeroSection = () => {
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
             <div className="relative w-72 h-72 lg:w-80 lg:h-80">
-              {/* Game Invite Popup */}
+              {/* Game Invite Popup + Outfit Changer */}
               <HaleyGameInvite />
+              <div className="absolute -top-2 -left-2 z-20">
+                <HaleyOutfitChanger onOutfitChange={setHaleyImage} />
+              </div>
               
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
-                  src={haleyNew} 
+                  src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-slow transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 

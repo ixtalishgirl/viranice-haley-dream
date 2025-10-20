@@ -111,7 +111,7 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
                   <p className="text-sm text-muted-foreground mb-4 font-poppins">
                     {game.description}
                   </p>
-                  <Button className="btn-sakura w-full">
+                  <Button className="btn-sakura w-full" onClick={() => setSelectedGame(game.id)}>
                     Play Now <Gamepad2 className="w-4 h-4 ml-2" />
                   </Button>
                 </div>
