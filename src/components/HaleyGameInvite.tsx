@@ -7,7 +7,7 @@ const HaleyGameInvite = () => {
   const [showInvite, setShowInvite] = useState(true);
   const [showGames, setShowGames] = useState(false);
 
-  if (!showInvite) return null;
+  if (!showInvite && !showGames) return null;
 
   return (
     <>

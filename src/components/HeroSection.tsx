@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sparkles, Wand2, Heart, Play, Star } from 'lucide-react';
+import { Sparkles, Wand2, Heart, Play, Star, MessageCircle } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
 import HaleyGameInvite from './HaleyGameInvite';
 import HaleyOutfitChanger from './HaleyOutfitChanger';
+import HaleyPopupChat from './HaleyPopupChat';
 import haleyNew from '@/assets/haley-new.jpg';
 import haleyHero from '@/assets/haley-hero.jpg';
 
@@ -11,6 +12,7 @@ const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
   const [showHaley, setShowHaley] = useState(false);
   const [haleyImage, setHaleyImage] = useState(haleyNew);
+  const [showChat, setShowChat] = useState(false);
 
   const heroTexts = [
     "Welcome to Haley's Magical Dreamland! ✨",
@@ -112,12 +114,21 @@ const HeroSection = () => {
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float-slow transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-slower transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 
                 {/* Green Online Dot */}
                 <div className="absolute top-4 right-4 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-lg"></div>
+
+                {/* Chat Button */}
+                <button
+                  onClick={() => setShowChat(true)}
+                  aria-label="Chat with Haley"
+                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-neon-blue/80 hover:bg-neon-blue text-white shadow-lg flex items-center justify-center transition-colors"
+                >
+                  <MessageCircle className="w-5 h-5" />
+                </button>
                 
                 {/* Outfit Changer - Inside Circle */}
                 <div className="absolute top-2 left-2 z-20">
@@ -148,6 +159,11 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
+
+      {/* Chat Modal */}
+      {showChat && (
+        <HaleyPopupChat isOpen onClose={() => setShowChat(false)} />
+      )}
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
