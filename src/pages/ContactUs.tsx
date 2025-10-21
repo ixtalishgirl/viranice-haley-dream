@@ -31,7 +31,7 @@ const ContactUs = () => {
     <>
       <Helmet>
         <title>Contact ViraLux Support - Get Help Now</title>
-        <meta name="description" content="Contact ViraLux for support, inquiries, or partnerships. Email: viraluxsuppurt@gmail.com" />
+        <meta name="description" content="Contact ViraLux for support, inquiries, or partnerships. Email: viraluxsupport@gmail.com" />
       </Helmet>
       <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/5">
         <MagicalNavigation />
@@ -52,7 +52,7 @@ const ContactUs = () => {
                 </form>
               </div>
               <div className="space-y-6">
-                <div className="glass-card p-6"><Mail className="w-8 h-8 text-neon-blue mb-3" /><h3 className="font-bold mb-2">Email</h3><a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline">viraluxsuppurt@gmail.com</a></div>
+                <div className="glass-card p-6"><Mail className="w-8 h-8 text-neon-blue mb-3" /><h3 className="font-bold mb-2">Email</h3><a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline">viraluxsupport@gmail.com</a></div>
                 <div className="glass-card p-6"><Clock className="w-8 h-8 text-neon-pink mb-3" /><h3 className="font-bold mb-2">Response Time</h3><p className="text-muted-foreground">24-48 hours</p></div>
               </div>
             </div>

@@ -100,7 +100,7 @@ const Index = () => {
                 <Link to="/privacy" className="hover:text-neon-blue transition-colors">Privacy Policy</Link>
                 <Link to="/terms" className="hover:text-neon-blue transition-colors">Terms of Service</Link>
                 <Link to="/contact" className="hover:text-neon-blue transition-colors">Contact Us</Link>
-                <a href="mailto:viraluxsuppurt@gmail.com" className="hover:text-neon-blue transition-colors">Support</a>
+                <a href="mailto:viraluxsupport@gmail.com" className="hover:text-neon-blue transition-colors">Support</a>
                 <Link to="/blog" className="hover:text-neon-blue transition-colors">Blog</Link>
               </div>
               

@@ -75,7 +75,7 @@ const TermsOfService = () => {
 
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">2.3 Account Termination</h3>
               <p className="mb-4">
-                We reserve the right to suspend or terminate your account at any time, without prior notice, for violations of these Terms, suspicious activity, or at our sole discretion. You may also terminate your account at any time by contacting us at <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline">viraluxsuppurt@gmail.com</a>.
+                We reserve the right to suspend or terminate your account at any time, without prior notice, for violations of these Terms, suspicious activity, or at our sole discretion. You may also terminate your account at any time by contacting us at <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline">viraluxsupport@gmail.com</a>.
               </p>
             </section>
 
@@ -262,7 +262,7 @@ const TermsOfService = () => {
               
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">9.1 Informal Resolution</h3>
               <p className="mb-4">
-                Before initiating any formal dispute resolution, you agree to contact us at <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline">viraluxsuppurt@gmail.com</a> to attempt to resolve the dispute informally for at least 30 days.
+                Before initiating any formal dispute resolution, you agree to contact us at <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline">viraluxsupport@gmail.com</a> to attempt to resolve the dispute informally for at least 30 days.
               </p>
 
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">9.2 Governing Law</h3>
@@ -306,7 +306,7 @@ const TermsOfService = () => {
                 For questions, concerns, or support regarding these Terms of Service, please contact us:
               </p>
               <div className="space-y-3 text-lg">
-                <p><strong className="text-neon-pink">Email:</strong> <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsuppurt@gmail.com</a></p>
+                <p><strong className="text-neon-pink">Email:</strong> <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsupport@gmail.com</a></p>
                 <p><strong className="text-neon-pink">Subject Line:</strong> "Terms of Service Inquiry" or "Legal Question"</p>
                 <p><strong className="text-neon-pink">Response Time:</strong> We aim to respond to all inquiries within 48-72 hours</p>
               </div>

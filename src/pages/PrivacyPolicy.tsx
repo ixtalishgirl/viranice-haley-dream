@@ -161,7 +161,7 @@ const PrivacyPolicy = () => {
 
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">6.2 Exercising Your Rights</h3>
               <p className="mb-4">
-                To exercise any of these rights, please contact us at <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsuppurt@gmail.com</a>. We will respond to your request within 30 days (or as required by applicable law). We may need to verify your identity before processing certain requests.
+                To exercise any of these rights, please contact us at <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsupport@gmail.com</a>. We will respond to your request within 30 days (or as required by applicable law). We may need to verify your identity before processing certain requests.
               </p>
 
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">6.3 Cookie Preferences</h3>
@@ -173,7 +173,7 @@ const PrivacyPolicy = () => {
             <section className="animate-fade-in">
               <h2 className="text-3xl font-bold mb-6 text-neon-blue">7. Children's Privacy</h2>
               <p className="mb-4 text-lg">
-                ViraLux is not intended for children under the age of 13 (or 16 in the European Economic Area). We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately at <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsuppurt@gmail.com</a>, and we will take prompt steps to delete such information.
+                ViraLux is not intended for children under the age of 13 (or 16 in the European Economic Area). We do not knowingly collect personal information from children. If you believe we have inadvertently collected information from a child, please contact us immediately at <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsupport@gmail.com</a>, and we will take prompt steps to delete such information.
               </p>
               <p className="mb-4">
                 Parents and guardians should monitor their children's internet usage and help enforce this Privacy Policy by instructing their children never to provide personal information without permission.
@@ -227,7 +227,7 @@ const PrivacyPolicy = () => {
                 If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please don't hesitate to contact us:
               </p>
               <div className="space-y-3 text-lg">
-                <p><strong className="text-neon-pink">Email:</strong> <a href="mailto:viraluxsuppurt@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsuppurt@gmail.com</a></p>
+                <p><strong className="text-neon-pink">Email:</strong> <a href="mailto:viraluxsupport@gmail.com" className="text-neon-blue hover:underline font-semibold">viraluxsupport@gmail.com</a></p>
                 <p><strong className="text-neon-pink">Subject Line:</strong> "Privacy Policy Inquiry" or "Data Rights Request"</p>
                 <p><strong className="text-neon-pink">Response Time:</strong> We aim to respond to all inquiries within 48-72 hours</p>
               </div>
