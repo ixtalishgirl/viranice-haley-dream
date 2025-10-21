@@ -1,44 +1,35 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { X, Gamepad2 } from 'lucide-react';
-import RacingGame from './games/RacingGame';
-import FarmingGame from './games/FarmingGame';
-import ShootingGame from './games/ShootingGame';
-import PuzzleGame from './games/PuzzleGame';
+import HaleyRunGame from './games3d/HaleyRunGame';
+import VoxelBuilderGame from './games3d/VoxelBuilderGame';
+import DrivingSimGame from './games3d/DrivingSimGame';
 import haleyNew from '@/assets/haley-new.jpg';
 
 const games = [
   {
-    id: 'racing',
-    name: 'Speed Rush 🏎️',
-    description: 'Race through neon city streets!',
-    difficulty: 'Hard',
-    color: 'from-red-600 to-orange-500',
-    component: RacingGame
-  },
-  {
-    id: 'farming',
-    name: 'Dream Farm 🌾',
-    description: 'Build your magical farm with Haley!',
-    difficulty: 'Easy',
-    color: 'from-green-500 to-emerald-600',
-    component: FarmingGame
-  },
-  {
-    id: 'shooting',
-    name: 'Monster Hunt 🎯',
-    description: 'Shoot the night creatures!',
-    difficulty: 'Hard',
-    color: 'from-purple-600 to-indigo-700',
-    component: ShootingGame
-  },
-  {
-    id: 'puzzle',
-    name: 'Magic Tiles ✨',
-    description: 'Match magical patterns!',
+    id: 'haley-run',
+    name: 'Haley Run ✨',
+    description: 'Temple-run style adventure with Haley!',
     difficulty: 'Medium',
-    color: 'from-pink-500 to-rose-600',
-    component: PuzzleGame
+    color: 'from-pink-500 to-purple-600',
+    component: HaleyRunGame
+  },
+  {
+    id: 'voxel',
+    name: 'Haley Craft 🧊',
+    description: 'Build magical voxel worlds!',
+    difficulty: 'Easy',
+    color: 'from-blue-500 to-cyan-600',
+    component: VoxelBuilderGame
+  },
+  {
+    id: 'driving',
+    name: 'Haley Drive 🚗',
+    description: 'Relaxing driving simulator in neon city.',
+    difficulty: 'Hard',
+    color: 'from-emerald-500 to-teal-600',
+    component: DrivingSimGame
   },
 ];
 

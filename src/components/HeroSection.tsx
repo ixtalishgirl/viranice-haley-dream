@@ -3,10 +3,9 @@ import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star, MessageCircle } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
 import HaleyGameInvite from './HaleyGameInvite';
-import HaleyOutfitChanger from './HaleyOutfitChanger';
 import HaleyPopupChat from './HaleyPopupChat';
 import haleyNew from '@/assets/haley-new.jpg';
-import haleyHero from '@/assets/haley-hero.jpg';
+
 
 const HeroSection = () => {
   const [currentText, setCurrentText] = useState(0);
@@ -114,7 +113,7 @@ const HeroSection = () => {
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float-slower transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-slowest transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 
