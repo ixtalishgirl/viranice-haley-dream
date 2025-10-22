@@ -213,6 +213,9 @@
 .animate-float-slow { animation: float 7s ease-in-out infinite; }
 .animate-float-slower { animation: float 12s ease-in-out infinite; }
 .animate-float-slowest { animation: float 20s ease-in-out infinite; }
+.animate-float-ultra { animation: float 28s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
+.animate-glow-pulse-slow { animation: glow-pulse 4s ease-in-out infinite; }
 
 /* Jelly Click Animation */
   @keyframes jelly {
@@ -330,4 +333,41 @@
   --primary: 260 100% 70%;
   --secondary: 300 70% 60%;
   --muted-foreground: 240 20% 75%;
+}
+
+/* New premium themes */
+[data-theme="sakura"] {
+  --background: 330 40% 6%;
+  --foreground: 330 100% 98%;
+  --neon-blue: 330 81% 70%;
+  --neon-blue-light: 330 81% 80%;
+  --neon-green: 195 100% 65%;
+  --neon-green-light: 195 100% 75%;
+  --haley-blue: 330 81% 70%;
+  --haley-glow: 330 81% 80%;
+  --card: 330 30% 10% / 0.95;
+  --card-foreground: 330 100% 98%;
+  --glass-bg: 330 40% 8% / 0.6;
+  --border: 330 20% 25%;
+  --primary: 330 81% 70%;
+  --secondary: 195 100% 65%;
+  --muted-foreground: 330 20% 75%;
+}
+
+[data-theme="emerald"] {
+  --background: 160 30% 6%;
+  --foreground: 160 100% 98%;
+  --neon-blue: 160 100% 60%;
+  --neon-blue-light: 160 100% 70%;
+  --neon-green: 160 90% 50%;
+  --neon-green-light: 160 90% 65%;
+  --haley-blue: 160 100% 58%;
+  --haley-glow: 160 100% 70%;
+  --card: 160 25% 10% / 0.95;
+  --card-foreground: 160 100% 98%;
+  --glass-bg: 160 25% 8% / 0.6;
+  --border: 160 20% 25%;
+  --primary: 160 90% 50%;
+  --secondary: 160 100% 60%;
+  --muted-foreground: 160 20% 75%;
 }

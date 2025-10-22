@@ -11,13 +11,13 @@ const HaleyGameInvite = () => {
   return (
     <>
       {/* Small Popup Bubble outside Haley's Circle */}
-      <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 z-30 animate-scale-in">
+      <div className="absolute top-1/2 -left-3 transform -translate-y-1/2 -translate-x-full z-30 animate-scale-in">
         <div className="relative">
           {/* Small Speech Bubble */}
-          <div className="bg-gradient-to-br from-pink-500 via-purple-500 to-pink-600 px-4 py-3 rounded-2xl shadow-2xl relative animate-glow-pulse">
+          <div className="bg-gradient-to-br from-neon-pink via-neon-blue to-neon-pink px-4 py-3 rounded-2xl shadow-2xl relative animate-glow-pulse">
             
             {/* Green Online Dot */}
-            <div className="absolute -top-1 -left-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
+            <div className="absolute -top-1 -left-1 w-3 h-3 bg-neon-green rounded-full border-2 border-background animate-pulse-slow"></div>
             
             {/* Message */}
             <div className="text-white text-center">
@@ -28,14 +28,14 @@ const HaleyGameInvite = () => {
                 onClick={() => {
                   setShowGames(true);
                 }}
-                className="bg-white text-pink-600 hover:bg-pink-50 font-bold px-4 py-1.5 rounded-full shadow-lg text-xs"
+                className="btn-sakura font-bold px-4 py-1.5 rounded-full text-xs"
               >
                 Let's Play! 🎉
               </Button>
             </div>
 
             {/* Bubble Tail pointing to Haley */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-pink-600"></div>
+            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-neon-pink"></div>
           </div>
         </div>
       </div>

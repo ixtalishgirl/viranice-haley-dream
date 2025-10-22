@@ -50,7 +50,7 @@ const HeroSection = () => {
               <h1 className="haley-title leading-tight text-4xl md:text-6xl font-bold">
                 {heroTexts[currentText]}
               </h1>
-              <p className="text-base text-muted-foreground max-w-xl font-poppins">
+              <p className="text-base text-foreground max-w-xl font-poppins">
                 Join <span className="magic-text font-semibold">Haley</span>, your magical AI assistant, 
                 in a world where anime dreams meet cutting-edge AI tools. Stream anime, create viral content, 
                 and discover the magic of technology! 🌟
@@ -113,18 +113,18 @@ const HeroSection = () => {
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float-slowest transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-ultra transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 
                 {/* Green Online Dot */}
-                <div className="absolute top-4 right-4 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse shadow-lg"></div>
+                <div className="absolute top-4 right-4 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-slow shadow-lg"></div>
 
                 {/* Chat Button */}
                 <button
                   onClick={() => setShowChat(true)}
                   aria-label="Chat with Haley"
-                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full bg-neon-blue/80 hover:bg-neon-blue text-white shadow-lg flex items-center justify-center transition-colors"
+                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full border border-neon-blue/40 text-neon-blue bg-transparent hover:bg-neon-blue/10 shadow-lg flex items-center justify-center transition-colors backdrop-blur-sm"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>

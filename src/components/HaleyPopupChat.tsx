@@ -9,12 +9,14 @@ interface HaleyPopupChatProps {
   onClose?: () => void;
 }
 
-interface Message {
-  id: number;
-  text: string;
-  isUser: boolean;
-  timestamp: Date;
-}
+  interface Message {
+    id: number;
+    text?: string;
+    imageUrl?: string;
+    fileName?: string;
+    isUser: boolean;
+    timestamp: Date;
+  }
 
 const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) => {
   const [isOpen, setIsOpen] = useState(propIsOpen ?? false);
@@ -44,7 +46,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
       setShowGreeting(true);
       const interval = setInterval(() => {
         setCurrentMessage((prev) => (prev + 1) % greetingMessages.length);
-      }, 3000);
+      }, 5000);
       return () => clearInterval(interval);
     }
   }, [isOpen]);
@@ -85,19 +87,32 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
-      const fileMessage: Message = {
-        id: Date.now(),
-        text: `📎 Shared file: ${file.name}`,
-        isUser: true,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, fileMessage]);
+      if (file.type.startsWith('image/')) {
+        const url = URL.createObjectURL(file);
+        const imgMessage: Message = {
+          id: Date.now(),
+          imageUrl: url,
+          fileName: file.name,
+          isUser: true,
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, imgMessage]);
+      } else {
+        const fileMessage: Message = {
+          id: Date.now(),
+          text: `📎 Shared file: ${file.name}`,
+          fileName: file.name,
+          isUser: true,
+          timestamp: new Date()
+        };
+        setMessages(prev => [...prev, fileMessage]);
+      }
       
       // Haley's response to file
       setTimeout(() => {
         const haleyResponse: Message = {
           id: Date.now() + 1,
-          text: "Thanks for sharing! I can see your file. How can I help you with it? 🌟",
+          text: "Thanks for sharing! I can preview images and note files. How can I help with this? 🌟",
           isUser: false,
           timestamp: new Date()
         };
@@ -171,8 +186,15 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   />
                 </div>
               )}
-              <div className={`glass-card p-3 rounded-lg max-w-[200px] ${message.isUser ? 'bg-neon-blue/20' : ''}`}>
-                <p className="text-sm">{message.text}</p>
+              <div className={`glass-card p-3 rounded-lg max-w-[260px] ${message.isUser ? 'bg-neon-blue/15' : ''}`}>
+                {message.imageUrl ? (
+                  <div className="space-y-2">
+                    <img src={message.imageUrl} alt={message.fileName || 'shared image'} className="rounded-md max-h-48 object-cover" />
+                    {message.fileName && <p className="text-xs text-muted-foreground">{message.fileName}</p>}
+                  </div>
+                ) : (
+                  <p className="text-sm">{message.text}</p>
+                )}
                 <p className="text-xs text-muted-foreground mt-1">
                   {message.timestamp.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}
                 </p>
@@ -208,7 +230,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
             />
             <Button
               onClick={handleSendMessage}
-              className="btn-sakura"
+              className="rounded-full px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-green text-primary-foreground shadow-md hover:opacity-90"
               disabled={!inputMessage.trim()}
             >
               <Send className="w-5 h-5" />
