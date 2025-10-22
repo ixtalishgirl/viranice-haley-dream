@@ -21,6 +21,9 @@
     --neon-green-light: 120 100% 75%;
     --neon-green-deep: 120 100% 45%;
     
+    /* Accent Pink */
+    --neon-pink: 330 100% 70%;
+    
     /* Glass Morphism */
     --glass-bg: 195 50% 10% / 0.2;
     --glass-border: 195 100% 65% / 0.3;
@@ -83,11 +86,14 @@
     --sakura-primary: 330 81% 70%;
     --purple-primary: 270 60% 75%;
     --card: 0 0% 0% / 0.5;
+    --card-foreground: 320 100% 98%;
     --glass-bg: 0 0% 0% / 0.4;
     --border: 217.2 32.6% 25%;
     --input: 217.2 32.6% 20%;
     --neon-blue: 195 100% 70%;
     --neon-green: 120 100% 65%;
+    --muted-foreground: 195 15% 75%;
+    --neon-pink: 330 100% 75%;
   }
 }
 
@@ -270,4 +276,58 @@
   --primary: 280 100% 60%;
   --secondary: 300 100% 55%;
   --muted-foreground: 270 20% 70%;
+}
+
+[data-theme="ocean"] {
+  --background: 210 50% 6%;
+  --foreground: 210 100% 98%;
+  --neon-blue: 195 100% 70%;
+  --neon-blue-light: 195 100% 80%;
+  --neon-green: 180 70% 50%;
+  --neon-green-light: 180 70% 65%;
+  --haley-blue: 195 100% 65%;
+  --haley-glow: 195 100% 75%;
+  --card: 210 30% 10% / 0.9;
+  --card-foreground: 210 100% 98%;
+  --glass-bg: 210 30% 8% / 0.5;
+  --border: 210 30% 30%;
+  --primary: 195 100% 70%;
+  --secondary: 180 70% 50%;
+  --muted-foreground: 210 15% 75%;
+}
+
+[data-theme="cyberpunk"] {
+  --background: 300 60% 6%;
+  --foreground: 300 100% 98%;
+  --neon-blue: 290 100% 60%;
+  --neon-blue-light: 290 100% 75%;
+  --neon-green: 160 100% 55%;
+  --neon-green-light: 160 100% 70%;
+  --haley-blue: 300 100% 60%;
+  --haley-glow: 300 100% 75%;
+  --card: 300 50% 10% / 0.95;
+  --card-foreground: 300 100% 98%;
+  --glass-bg: 300 50% 8% / 0.6;
+  --border: 300 30% 30%;
+  --primary: 300 100% 60%;
+  --secondary: 160 100% 55%;
+  --muted-foreground: 300 20% 75%;
+}
+
+[data-theme="galaxy"] {
+  --background: 240 60% 4%;
+  --foreground: 240 100% 98%;
+  --neon-blue: 260 100% 70%;
+  --neon-blue-light: 260 100% 80%;
+  --neon-green: 300 70% 60%;
+  --neon-green-light: 300 70% 70%;
+  --haley-blue: 260 100% 65%;
+  --haley-glow: 260 100% 78%;
+  --card: 240 40% 8% / 0.95;
+  --card-foreground: 240 100% 98%;
+  --glass-bg: 240 40% 6% / 0.6;
+  --border: 240 20% 25%;
+  --primary: 260 100% 70%;
+  --secondary: 300 70% 60%;
+  --muted-foreground: 240 20% 75%;
 }

@@ -31,6 +31,7 @@ export default {
         'neon-green': "hsl(var(--neon-green))",
         'neon-green-light': "hsl(var(--neon-green-light))",
         'neon-green-deep': "hsl(var(--neon-green-deep))",
+        'neon-pink': "hsl(var(--neon-pink))",
         'haley-blue': "hsl(var(--haley-blue))",
         'haley-glow': "hsl(var(--haley-glow))",
         

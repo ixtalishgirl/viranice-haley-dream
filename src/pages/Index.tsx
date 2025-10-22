@@ -11,6 +11,7 @@ import AnimeSection from '@/components/AnimeSection';
 import ClickAnimations from '@/components/ClickAnimations';
 import JellyClick from '@/components/JellyClick';
 import ThemeBackground3D from '@/components/ThemeBackground3D';
+import FloatingChatButton from '@/components/FloatingChatButton';
 import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
 
 const Index = () => {
@@ -115,6 +116,8 @@ const Index = () => {
         </footer>
         </main>
         
+        {/* Global floating chat button */}
+        <FloatingChatButton />
         {/* Haley chat removed as requested */}
       </div>
       </div>

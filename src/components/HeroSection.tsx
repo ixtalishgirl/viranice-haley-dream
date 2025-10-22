@@ -146,9 +146,9 @@ const HeroSection = () => {
               <div className="absolute bottom-16 -left-4 text-lg animate-glow-pulse delay-500 opacity-40">🍃</div>
               
               {/* Magical Circles */}
-              <div className="absolute inset-0 border border-neon-blue/20 rounded-full animate-glow-pulse"></div>
-              <div className="absolute inset-6 border border-neon-green/20 rounded-full animate-glow-pulse delay-1000"></div>
-              <div className="absolute inset-12 border border-haley-blue/20 rounded-full animate-glow-pulse delay-2000"></div>
+              <div className="absolute inset-0 border border-neon-blue/20 rounded-full animate-glow-pulse-slow"></div>
+              <div className="absolute inset-6 border border-neon-green/20 rounded-full animate-glow-pulse-slow delay-1000"></div>
+              <div className="absolute inset-12 border border-haley-blue/20 rounded-full animate-glow-pulse-slow delay-2000"></div>
             </div>
           </div>
         </div>
