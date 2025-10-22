@@ -128,11 +128,6 @@ const HeroSection = () => {
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
-                
-                {/* Outfit Changer - Inside Circle */}
-                <div className="absolute top-2 left-2 z-20">
-                  <HaleyOutfitChanger onOutfitChange={setHaleyImage} />
-                </div>
               </div>
 
               {/* Interactive Haley Assistant */}
