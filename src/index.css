@@ -130,7 +130,7 @@
 @layer components {
   /* Glassmorphism Card System */
   .glass-card {
-    @apply rounded-2xl border border-card-border;
+    @apply rounded-2xl border border-card-border text-foreground;
     background: hsl(var(--card));
   }
 
