@@ -10,32 +10,29 @@ const HaleyGameInvite = () => {
 
   return (
     <>
-      {/* Small Popup Bubble outside Haley's Circle */}
-      <div className="absolute top-1/2 -left-3 transform -translate-y-1/2 -translate-x-full z-30 animate-scale-in">
+      {/* Compact Speech Bubble - Close to Haley */}
+      <div className="absolute top-1/2 -right-2 transform translate-x-full -translate-y-1/2 z-30">
         <div className="relative">
-          {/* Small Speech Bubble */}
-          <div className="bg-gradient-to-br from-neon-pink via-neon-blue to-neon-pink px-4 py-3 rounded-2xl shadow-2xl relative animate-glow-pulse">
-            
-            {/* Green Online Dot */}
-            <div className="absolute -top-1 -left-1 w-3 h-3 bg-neon-green rounded-full border-2 border-background animate-pulse-slow"></div>
+          {/* Transparent Glass Bubble */}
+          <div className="bg-gradient-to-br from-pink-500/80 via-purple-500/80 to-blue-500/80 backdrop-blur-md px-3 py-2 rounded-xl shadow-2xl relative border border-white/20">
             
             {/* Message */}
             <div className="text-white text-center">
-              <div className="text-sm font-bold mb-2">
-                Wanna play games with me? 🎮
+              <div className="text-xs font-semibold mb-1.5 drop-shadow-lg">
+                Do you wanna play games with me? 🎮
               </div>
               <Button
                 onClick={() => {
                   setShowGames(true);
                 }}
-                className="btn-sakura font-bold px-4 py-1.5 rounded-full text-xs"
+                className="bg-white/90 hover:bg-white text-purple-600 font-bold px-3 py-1 rounded-full text-xs shadow-lg transition-all duration-300 hover:scale-105"
               >
                 Let's Play! 🎉
               </Button>
             </div>
 
-            {/* Bubble Tail pointing to Haley */}
-            <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-6 border-r-6 border-t-6 border-l-transparent border-r-transparent border-t-neon-pink"></div>
+            {/* Bubble Tail pointing to Haley (left side) */}
+            <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 w-0 h-0 border-t-8 border-b-8 border-r-8 border-t-transparent border-b-transparent border-r-pink-500/80"></div>
           </div>
         </div>
       </div>
