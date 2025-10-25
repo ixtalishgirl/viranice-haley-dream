@@ -74,7 +74,7 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
   }
 
   return (
-    <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-[100] flex items-center justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fade-in">
       <div className="glass-card rounded-3xl p-8 max-w-6xl w-full max-h-[90vh] overflow-y-auto relative">
         <button
           onClick={onClose}

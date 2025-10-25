@@ -122,7 +122,7 @@ const HeroSection = () => {
                 <button
                   onClick={() => setShowChat(true)}
                   aria-label="Chat with Haley"
-                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full border border-neon-blue/40 text-neon-blue bg-transparent hover:bg-neon-blue/10 shadow-lg flex items-center justify-center transition-colors backdrop-blur-sm animate-float-super-slow"
+                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full border border-neon-blue/40 text-neon-blue bg-transparent hover:bg-neon-blue/10 shadow-lg flex items-center justify-center transition-colors backdrop-blur-sm"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
