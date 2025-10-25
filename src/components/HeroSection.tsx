@@ -104,19 +104,21 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 lg:w-80 lg:h-80 animate-float-super-slow">
+            <div className="relative w-72 h-72 lg:w-80 lg:h-80">
+              {/* Game Invite Popup - Outside Circle */}
+              <HaleyGameInvite />
               
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-ultra transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 
                 {/* Green Online Dot */}
-                <div className="absolute top-4 right-4 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-gentle shadow-lg"></div>
+                <div className="absolute top-4 right-4 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-slow shadow-lg"></div>
 
                 {/* Chat Button */}
                 <button
@@ -126,9 +128,6 @@ const HeroSection = () => {
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
-                
-                {/* Game Invite - positioned outside */}
-                <HaleyGameInvite />
               </div>
 
               {/* Interactive Haley Assistant */}

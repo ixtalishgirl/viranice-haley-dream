@@ -4,9 +4,6 @@ import { X, Gamepad2 } from 'lucide-react';
 import HaleyRunGame from './games3d/HaleyRunGame';
 import VoxelBuilderGame from './games3d/VoxelBuilderGame';
 import DrivingSimGame from './games3d/DrivingSimGame';
-import CarromGame from './games3d/CarromGame';
-import BubbleShooterGame from './games3d/BubbleShooterGame';
-import SaveCatGame from './games3d/SaveCatGame';
 import haleyNew from '@/assets/haley-new.jpg';
 
 const games = [
@@ -19,35 +16,11 @@ const games = [
     component: HaleyRunGame
   },
   {
-    id: 'carrom',
-    name: 'Play Carrom 🎯',
-    description: 'Play carrom board with Haley!',
-    difficulty: 'Easy',
-    color: 'from-amber-500 to-orange-600',
-    component: CarromGame
-  },
-  {
-    id: 'bubble',
-    name: 'Bubble Shooter 🫧',
-    description: 'Pop colorful bubbles & score high!',
-    difficulty: 'Easy',
-    color: 'from-blue-500 to-purple-600',
-    component: BubbleShooterGame
-  },
-  {
-    id: 'save-cat',
-    name: 'Save Cat 🐱',
-    description: 'Catch falling blue-eyed cats in basket!',
-    difficulty: 'Medium',
-    color: 'from-sky-400 to-blue-600',
-    component: SaveCatGame
-  },
-  {
     id: 'voxel',
     name: 'Haley Craft 🧊',
     description: 'Build magical voxel worlds!',
     difficulty: 'Easy',
-    color: 'from-cyan-500 to-teal-600',
+    color: 'from-blue-500 to-cyan-600',
     component: VoxelBuilderGame
   },
   {
@@ -55,7 +28,7 @@ const games = [
     name: 'Haley Drive 🚗',
     description: 'Relaxing driving simulator in neon city.',
     difficulty: 'Hard',
-    color: 'from-emerald-500 to-green-600',
+    color: 'from-emerald-500 to-teal-600',
     component: DrivingSimGame
   },
 ];
@@ -98,7 +71,7 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
         </div>
 
         {/* Games Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {games.map((game) => (
             <div
               key={game.id}
