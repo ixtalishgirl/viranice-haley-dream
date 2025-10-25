@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sparkles, Wand2, Heart, Play, Star, MessageCircle } from 'lucide-react';
 import HaleyAssistant from './HaleyAssistant';
-import HaleyGameInvite from './HaleyGameInvite';
 import HaleyPopupChat from './HaleyPopupChat';
 import haleyNew from '@/assets/haley-new.jpg';
 
@@ -50,7 +49,7 @@ const HeroSection = () => {
               <h1 className="haley-title leading-tight text-4xl md:text-6xl font-bold">
                 {heroTexts[currentText]}
               </h1>
-              <p className="text-base text-foreground max-w-xl font-poppins">
+              <p className="text-lg text-foreground/90 max-w-xl font-poppins font-medium">
                 Join <span className="magic-text font-semibold">Haley</span>, your magical AI assistant, 
                 in a world where anime dreams meet cutting-edge AI tools. Stream anime, create viral content, 
                 and discover the magic of technology! 🌟
@@ -59,17 +58,17 @@ const HeroSection = () => {
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center">
-              <div className="glass-card p-3 rounded-xl">
+              <div className="glass-card p-3 rounded-xl animate-float">
                 <div className="text-lg font-bold magic-text">32+</div>
-                <div className="text-xs text-muted-foreground">AI Tools</div>
+                <div className="text-sm text-foreground/80 font-semibold">AI Tools</div>
               </div>
-              <div className="glass-card p-3 rounded-xl">
+              <div className="glass-card p-3 rounded-xl animate-float-slow">
                 <div className="text-lg font-bold magic-text">1000+</div>
-                <div className="text-xs text-muted-foreground">Anime Shows</div>
+                <div className="text-sm text-foreground/80 font-semibold">Anime Shows</div>
               </div>
-              <div className="glass-card p-3 rounded-xl">
+              <div className="glass-card p-3 rounded-xl animate-float-slower">
                 <div className="text-lg font-bold magic-text">∞</div>
-                <div className="text-xs text-muted-foreground">Magic Moments</div>
+                <div className="text-sm text-foreground/80 font-semibold">Magic Moments</div>
               </div>
             </div>
 
@@ -87,48 +86,44 @@ const HeroSection = () => {
 
             {/* Features */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
-              <div className="flex items-center space-x-2 text-sm">
-                <Sparkles className="w-4 h-4 text-neon-blue" />
-                <span>Free AI Tools</span>
+              <div className="flex items-center space-x-2 text-sm animate-scale-in">
+                <Sparkles className="w-4 h-4 text-neon-blue animate-glow-pulse" />
+                <span className="text-foreground/90 font-medium">Free AI Tools</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Heart className="w-4 h-4 text-neon-green" />
-                <span>Premium Anime</span>
+              <div className="flex items-center space-x-2 text-sm animate-scale-in" style={{ animationDelay: '0.1s' }}>
+                <Heart className="w-4 h-4 text-neon-green animate-glow-pulse" />
+                <span className="text-foreground/90 font-medium">Premium Anime</span>
               </div>
-              <div className="flex items-center space-x-2 text-sm">
-                <Star className="w-4 h-4 text-haley-blue" />
-                <span>Haley Assistant</span>
+              <div className="flex items-center space-x-2 text-sm animate-scale-in" style={{ animationDelay: '0.2s' }}>
+                <Star className="w-4 h-4 text-haley-blue animate-glow-pulse" />
+                <span className="text-foreground/90 font-medium">Haley Assistant</span>
               </div>
             </div>
           </div>
 
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 lg:w-80 lg:h-80 animate-float-super-slow">
-              
+            <div className="relative w-72 h-72 lg:w-80 lg:h-80">
               {/* Beautiful Haley Image */}
               <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-ultra transition-all duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 
                 {/* Green Online Dot */}
-                <div className="absolute top-4 right-4 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-gentle shadow-lg"></div>
+                <div className="absolute top-4 right-4 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-slow shadow-lg"></div>
 
                 {/* Chat Button */}
                 <button
                   onClick={() => setShowChat(true)}
                   aria-label="Chat with Haley"
-                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full border border-neon-blue/40 text-neon-blue bg-transparent hover:bg-neon-blue/10 shadow-lg flex items-center justify-center transition-colors backdrop-blur-sm animate-float-super-slow"
+                  className="absolute bottom-3 left-3 w-9 h-9 rounded-full border border-neon-blue/40 text-neon-blue bg-transparent hover:bg-neon-blue/10 shadow-lg flex items-center justify-center transition-colors backdrop-blur-sm"
                 >
                   <MessageCircle className="w-5 h-5" />
                 </button>
-                
-                {/* Game Invite - positioned outside */}
-                <HaleyGameInvite />
               </div>
 
               {/* Interactive Haley Assistant */}

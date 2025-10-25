@@ -59,7 +59,7 @@
 
     /* System Colors */
     --muted: 195 20% 95%;
-    --muted-foreground: 195 15% 45%;
+    --muted-foreground: 260 15% 35%;
     --border: 195 100% 80%;
     --input: 195 20% 95%;
     --ring: 195 100% 65%;
@@ -92,7 +92,7 @@
     --input: 217.2 32.6% 20%;
     --neon-blue: 195 100% 70%;
     --neon-green: 120 100% 65%;
-    --muted-foreground: 195 15% 75%;
+    --muted-foreground: 0 0% 85%;
     --neon-pink: 330 100% 75%;
   }
 }
@@ -130,7 +130,7 @@
 @layer components {
   /* Glassmorphism Card System */
   .glass-card {
-    @apply rounded-2xl border border-card-border text-foreground;
+    @apply rounded-2xl border border-card-border;
     background: hsl(var(--card));
   }
 
@@ -213,10 +213,8 @@
 .animate-float-slow { animation: float 7s ease-in-out infinite; }
 .animate-float-slower { animation: float 12s ease-in-out infinite; }
 .animate-float-slowest { animation: float 20s ease-in-out infinite; }
-.animate-float-ultra { animation: animate-float-ultra 28s ease-in-out infinite; }
-.animate-float-super-slow { animation: animate-float-super-slow 35s ease-in-out infinite; }
+.animate-float-ultra { animation: float 28s ease-in-out infinite; }
 .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
-.animate-pulse-gentle { animation: animate-pulse-gentle 3s ease-in-out infinite; }
 .animate-glow-pulse-slow { animation: glow-pulse 4s ease-in-out infinite; }
 
 /* Jelly Click Animation */

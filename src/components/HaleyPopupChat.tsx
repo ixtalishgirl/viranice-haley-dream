@@ -168,8 +168,8 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="bg-transparent border border-neon-blue/30 backdrop-blur-sm p-3 rounded-lg max-w-[220px]">
-                <p className="text-sm text-foreground">{greetingMessages[currentMessage]}</p>
+              <div className="glass-card p-3 rounded-lg max-w-[200px]">
+                <p className="text-sm">{greetingMessages[currentMessage]}</p>
               </div>
             </div>
           )}
@@ -186,7 +186,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   />
                 </div>
               )}
-              <div className={`bg-transparent border backdrop-blur-sm p-3 rounded-lg max-w-[260px] ${message.isUser ? 'border-neon-blue/35' : 'border-neon-blue/25'}`}>
+              <div className={`glass-card p-3 rounded-lg max-w-[260px] ${message.isUser ? 'bg-neon-blue/15' : ''}`}>
                 {message.imageUrl ? (
                   <div className="space-y-2">
                     <img src={message.imageUrl} alt={message.fileName || 'shared image'} className="rounded-md max-h-48 object-cover" />

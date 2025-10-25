@@ -6,6 +6,8 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 const themes = [
   { id: 'default', label: '☀️ Light', icon: '☀️' },
   { id: 'dark', label: '🌙 Dark', icon: '🌙' },
+  { id: 'sakura', label: '🌸 Sakura', icon: '🌸' },
+  { id: 'emerald', label: '💚 Emerald', icon: '💚' },
   { id: 'horror', label: '👻 Horror', icon: '👻' },
   { id: 'nightmare', label: '💀 Nightmare', icon: '💀' },
   { id: 'rain', label: '🌧️ Rain Scene', icon: '🌧️' },
@@ -77,7 +79,7 @@ const MagicalNavigation = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="flex items-center space-x-2 text-foreground hover:text-sakura-primary transition-colors duration-200 group"
+                className="flex items-center space-x-2 text-foreground/90 hover:text-neon-blue transition-all duration-200 group font-semibold hover:scale-105"
               >
                 <span className="group-hover:animate-glow-pulse">{item.icon}</span>
                 <span className="font-medium font-poppins">{item.name}</span>
