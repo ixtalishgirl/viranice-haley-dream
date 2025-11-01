@@ -6,6 +6,7 @@ import { Helmet } from 'react-helmet';
 import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
 import ToolsSection from '@/components/ToolsSection';
+import FeaturesSection from '@/components/FeaturesSection';
 import AnimeSection from '@/components/AnimeSection';
 
 import ClickAnimations from '@/components/ClickAnimations';
@@ -37,11 +38,11 @@ const Index = () => {
   return (
     <>
       <Helmet>
-        <title>ViraLux | Haley's Dreamland - AI-Powered Content Creation Tools</title>
-        <meta name="description" content="Transform your content creation with ViraLux AI tools. Generate viral YouTube titles, predict content success, and explore anime with Haley's magical assistant." />
-        <meta name="keywords" content="AI tools, viral content, YouTube titles, content creation, anime, AI assistant, viral prediction" />
-        <meta property="og:title" content="ViraLux | Haley's Dreamland - AI Content Creation" />
-        <meta property="og:description" content="AI-powered tools for viral content creation and anime discovery" />
+        <title>Haley Dreamland - Your Personal AI Companion & Memory Vault</title>
+        <meta name="description" content="Meet Haley, your personal AI assistant. Save conversations forever, create stunning thumbnails, and keep all your memories in one magical place. Private, secure, and always available." />
+        <meta name="keywords" content="AI assistant, memory vault, chat archive, thumbnail creator, personal AI, conversation storage, Haley Dreamland" />
+        <meta property="og:title" content="Haley Dreamland - Personal AI Companion" />
+        <meta property="og:description" content="Your personal AI assistant, memory vault, and creative studio in one beautiful place" />
         <meta property="og:type" content="website" />
         <link rel="canonical" href="https://viralux.lovable.app" />
       </Helmet>
@@ -81,19 +82,19 @@ const Index = () => {
           {/* Anime Section */}
           <AnimeSection />
           
-          {/* Tools Section */}
-          <ToolsSection />
+          {/* Features Section */}
+          <FeaturesSection />
         
         {/* Footer */}
         <footer className="py-12 relative">
           <div className="container mx-auto px-4">
             <div className="glass-card p-6 rounded-2xl text-center">
               <h3 className="text-xl font-bold magic-text mb-3">
-                Made with 💖 by Haley & the ViraLux Team
+                Made with 💖 by Haley Dreamland
               </h3>
               <p className="text-muted-foreground mb-4 max-w-xl mx-auto font-poppins text-sm">
-                ViraLux | Haley's Dreamland is where anime dreams come true and AI magic happens. 
-                Join our community of creators, dreamers, and anime lovers! ✨
+                Haley Dreamland is where memories are saved, creativity blooms, and AI magic happens. 
+                Join our community of dreamers and creators! ✨
               </p>
               
               {/* Footer Links */}
@@ -107,8 +108,8 @@ const Index = () => {
               
               <div className="mt-6 pt-4 border-t border-border">
                 <p className="text-xs text-muted-foreground">
-                  © 2024 ViraLux | Haley's Dreamland. All rights reserved. 
-                  <span className="ml-2">🌲 Made with love and AI magic ✨</span>
+                  © 2024 Haley Dreamland. All rights reserved. 
+                  <span className="ml-2">🌸 Made with love and AI magic ✨</span>
                 </p>
               </div>
             </div>

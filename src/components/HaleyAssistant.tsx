@@ -19,7 +19,7 @@ const HaleyAssistant: React.FC<HaleyAssistantProps> = ({
 
   const haleyPhrases = [
     "Welcome to my dreamland! 🌸",
-    "Need help with tools? I'm here! ✨",
+    "Need help with anything? I'm here! ✨",
     "Let's discover amazing anime together! 💖",
     "Want to create viral content? 🚀",
     "I love helping you succeed! 🌟",

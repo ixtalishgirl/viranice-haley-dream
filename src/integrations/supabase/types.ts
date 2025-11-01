@@ -14,13 +14,142 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      haley_messages: {
+        Row: {
+          content: string
+          content_plain: string | null
+          created_at: string | null
+          id: string
+          metadata: Json | null
+          role: string
+          user_id: string | null
+        }
+        Insert: {
+          content: string
+          content_plain?: string | null
+          created_at?: string | null
+          id?: string
+          metadata?: Json | null
+          role: string
+          user_id?: string | null
+        }
+        Update: {
+          content?: string
+          content_plain?: string | null
+          created_at?: string | null
+          id?: string
+          metadata?: Json | null
+          role?: string
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "haley_messages_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "haley_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      haley_thumbnails: {
+        Row: {
+          ai_feedback: string | null
+          created_at: string | null
+          id: number
+          is_public: boolean | null
+          language: string | null
+          model_used: string | null
+          prompt: string | null
+          rating: number | null
+          tags: string[] | null
+          thumbnail_url: string | null
+          user_id: string | null
+          uuid: string | null
+          video_title: string | null
+          views: number | null
+        }
+        Insert: {
+          ai_feedback?: string | null
+          created_at?: string | null
+          id?: number
+          is_public?: boolean | null
+          language?: string | null
+          model_used?: string | null
+          prompt?: string | null
+          rating?: number | null
+          tags?: string[] | null
+          thumbnail_url?: string | null
+          user_id?: string | null
+          uuid?: string | null
+          video_title?: string | null
+          views?: number | null
+        }
+        Update: {
+          ai_feedback?: string | null
+          created_at?: string | null
+          id?: number
+          is_public?: boolean | null
+          language?: string | null
+          model_used?: string | null
+          prompt?: string | null
+          rating?: number | null
+          tags?: string[] | null
+          thumbnail_url?: string | null
+          user_id?: string | null
+          uuid?: string | null
+          video_title?: string | null
+          views?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "haley_thumbnails_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "haley_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      haley_users: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          display_name: string | null
+          email: string
+          id: string
+          role: string | null
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          email: string
+          id?: string
+          role?: string | null
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          display_name?: string | null
+          email?: string
+          id?: string
+          role?: string | null
+          username?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_thumbnail_views: {
+        Args: { thumbnail_uuid: string }
+        Returns: undefined
+      }
     }
     Enums: {
       [_ in never]: never

@@ -14,9 +14,9 @@ const HeroSection = () => {
 
   const heroTexts = [
     "Welcome to Haley's Magical Dreamland! ✨",
-    "Discover Amazing Anime & AI Tools 🌸",
-    "Create Viral Content with AI Magic 🚀",
-    "Your Anime Paradise Awaits 💖"
+    "Your Personal AI Assistant & Memory Vault 🌸",
+    "Create, Save & Share Your Moments 🚀",
+    "Your Digital Paradise Awaits 💖"
   ];
 
   useEffect(() => {
@@ -50,25 +50,24 @@ const HeroSection = () => {
                 {heroTexts[currentText]}
               </h1>
               <p className="text-lg text-foreground/90 max-w-xl font-poppins font-medium">
-                Join <span className="magic-text font-semibold">Haley</span>, your magical AI assistant, 
-                in a world where anime dreams meet cutting-edge AI tools. Stream anime, create viral content, 
-                and discover the magic of technology! 🌟
+                Meet <span className="magic-text font-semibold">Haley</span>, your personal AI assistant and creative companion. 
+                Save your conversations, create stunning thumbnails, and keep all your memories in one magical place! 🌟
               </p>
             </div>
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center">
               <div className="glass-card p-3 rounded-xl animate-float">
-                <div className="text-lg font-bold magic-text">32+</div>
-                <div className="text-sm text-foreground/80 font-semibold">AI Tools</div>
+                <div className="text-lg font-bold magic-text">∞</div>
+                <div className="text-sm text-foreground/80 font-semibold">Conversations Saved</div>
               </div>
               <div className="glass-card p-3 rounded-xl animate-float-slow">
-                <div className="text-lg font-bold magic-text">1000+</div>
-                <div className="text-sm text-foreground/80 font-semibold">Anime Shows</div>
+                <div className="text-lg font-bold magic-text">100%</div>
+                <div className="text-sm text-foreground/80 font-semibold">Private & Secure</div>
               </div>
               <div className="glass-card p-3 rounded-xl animate-float-slower">
-                <div className="text-lg font-bold magic-text">∞</div>
-                <div className="text-sm text-foreground/80 font-semibold">Magic Moments</div>
+                <div className="text-lg font-bold magic-text">24/7</div>
+                <div className="text-sm text-foreground/80 font-semibold">Always Available</div>
               </div>
             </div>
 
@@ -76,11 +75,11 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
               <Button className="btn-sakura text-base px-6 py-3">
                 <Play className="w-4 h-4 mr-2" />
-                Start Your Journey ✨
+                Start Chatting ✨
               </Button>
               <Button className="btn-purple text-base px-6 py-3">
                 <Wand2 className="w-4 h-4 mr-2" />
-                Explore AI Tools
+                Explore Features
               </Button>
             </div>
 
@@ -88,15 +87,15 @@ const HeroSection = () => {
             <div className="flex flex-wrap justify-center lg:justify-start gap-4 pt-4">
               <div className="flex items-center space-x-2 text-sm animate-scale-in">
                 <Sparkles className="w-4 h-4 text-neon-blue animate-glow-pulse" />
-                <span className="text-foreground/90 font-medium">Free AI Tools</span>
+                <span className="text-foreground/90 font-medium">Memory Vault</span>
               </div>
               <div className="flex items-center space-x-2 text-sm animate-scale-in" style={{ animationDelay: '0.1s' }}>
                 <Heart className="w-4 h-4 text-neon-green animate-glow-pulse" />
-                <span className="text-foreground/90 font-medium">Premium Anime</span>
+                <span className="text-foreground/90 font-medium">Creative Studio</span>
               </div>
               <div className="flex items-center space-x-2 text-sm animate-scale-in" style={{ animationDelay: '0.2s' }}>
                 <Star className="w-4 h-4 text-haley-blue animate-glow-pulse" />
-                <span className="text-foreground/90 font-medium">Haley Assistant</span>
+                <span className="text-foreground/90 font-medium">AI Companion</span>
               </div>
             </div>
           </div>

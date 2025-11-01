@@ -1,1 +1,28 @@
 project_id = "wszuqkysoaxllhfqaebk"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "storage"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[functions.thumbnails]
+verify_jwt = false
+
+[functions.messages]
+verify_jwt = true
+
+[functions.users]
+verify_jwt = true
+
+[functions.export-messages]
+verify_jwt = true

@@ -29,7 +29,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
 
   const greetingMessages = [
     "Hello! I'm your Haley Assistant 💫",
-    "I can help you explore amazing tools! ✨",
+    "I can help you with anything! ✨",
     "Want to discover some anime magic? 🌸",
     "Let's create something beautiful together! 💖",
     "I'm here whenever you need me! 🌟"
@@ -71,7 +71,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
       setTimeout(() => {
         const haleyResponse: Message = {
           id: Date.now() + 1,
-          text: "Thanks for your message! I'm here to help you with any questions about our tools and anime content! 🌸✨",
+          text: "Thanks for your message! I'm here to help you with anything you need! 🌸✨",
           isUser: false,
           timestamp: new Date()
         };
