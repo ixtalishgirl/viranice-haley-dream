@@ -59,7 +59,7 @@
 
     /* System Colors */
     --muted: 195 20% 95%;
-    --muted-foreground: 260 15% 35%;
+    --muted-foreground: 260 25% 25%;
     --border: 195 100% 80%;
     --input: 195 20% 95%;
     --ring: 195 100% 65%;
@@ -206,7 +206,12 @@
 /* Float keyframes and utilities */
 @keyframes float {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-6px); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes float-super-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
 }
 
 .animate-float { animation: float 3.5s ease-in-out infinite; }
@@ -214,6 +219,7 @@
 .animate-float-slower { animation: float 12s ease-in-out infinite; }
 .animate-float-slowest { animation: float 20s ease-in-out infinite; }
 .animate-float-ultra { animation: float 28s ease-in-out infinite; }
+.animate-float-super-slow { animation: float-super-slow 40s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
 .animate-pulse-slow { animation: pulse 3s cubic-bezier(0.4,0,0.6,1) infinite; }
 .animate-glow-pulse-slow { animation: glow-pulse 4s ease-in-out infinite; }
 

@@ -34,6 +34,25 @@ const HeroSection = () => {
 
   return (
     <section id="home" className="min-h-screen relative overflow-hidden flex items-center justify-center">
+      {/* Corner Stats Badges - 24/7 and Secure */}
+      <div className="fixed top-4 right-4 z-40 hidden lg:block">
+        <div className="glass-card px-4 py-2 rounded-full border-2 border-neon-green/30 backdrop-blur-md animate-float-slow shadow-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse-slow"></div>
+            <span className="text-sm font-bold text-foreground/95" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>24/7 Always Available</span>
+          </div>
+        </div>
+      </div>
+      
+      <div className="fixed top-4 left-4 z-40 hidden lg:block">
+        <div className="glass-card px-4 py-2 rounded-full border-2 border-neon-blue/30 backdrop-blur-md animate-float-slower shadow-lg">
+          <div className="flex items-center gap-2">
+            <div className="w-2 h-2 bg-neon-blue rounded-full animate-pulse-slow"></div>
+            <span className="text-sm font-bold text-foreground/95" style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}>100% Private & Secure</span>
+          </div>
+        </div>
+      </div>
+
       {/* Magical Background Elements */}
       <div className="absolute inset-0 magic-bg">
         <div className="absolute top-20 left-10 w-32 h-32 bg-neon-blue/10 rounded-full blur-3xl animate-float"></div>
@@ -49,25 +68,17 @@ const HeroSection = () => {
               <h1 className="haley-title leading-tight text-4xl md:text-6xl font-bold">
                 {heroTexts[currentText]}
               </h1>
-              <p className="text-lg text-foreground/90 max-w-xl font-poppins font-medium">
+              <p className="text-lg text-foreground/95 max-w-xl font-poppins font-medium" style={{ textShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
                 Meet <span className="magic-text font-semibold">Haley</span>, your personal AI assistant and creative companion. 
                 Save your conversations, create stunning thumbnails, and keep all your memories in one magical place! 🌟
               </p>
             </div>
 
-            {/* Stats */}
-            <div className="flex flex-wrap justify-center lg:justify-start gap-4 text-center">
+            {/* Stats - kept for mobile, hidden on desktop */}
+            <div className="flex lg:hidden flex-wrap justify-center gap-4 text-center">
               <div className="glass-card p-3 rounded-xl animate-float">
                 <div className="text-lg font-bold magic-text">∞</div>
-                <div className="text-sm text-foreground/80 font-semibold">Conversations Saved</div>
-              </div>
-              <div className="glass-card p-3 rounded-xl animate-float-slow">
-                <div className="text-lg font-bold magic-text">100%</div>
-                <div className="text-sm text-foreground/80 font-semibold">Private & Secure</div>
-              </div>
-              <div className="glass-card p-3 rounded-xl animate-float-slower">
-                <div className="text-lg font-bold magic-text">24/7</div>
-                <div className="text-sm text-foreground/80 font-semibold">Always Available</div>
+                <div className="text-sm text-foreground/95 font-semibold">Conversations</div>
               </div>
             </div>
 
@@ -102,13 +113,19 @@ const HeroSection = () => {
 
           {/* Hero Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            <div className="relative w-72 h-72 lg:w-80 lg:h-80">
-              {/* Beautiful Haley Image */}
-              <div className="absolute inset-0 rounded-full overflow-hidden glass-card">
+            {/* Background gradient wrapper to fix white background issue */}
+            <div className="absolute inset-0 flex justify-center lg:justify-end items-center">
+              <div className="w-96 h-96 lg:w-[28rem] lg:h-[28rem] rounded-full bg-gradient-to-br from-neon-blue/5 via-haley-blue/5 to-neon-green/5 blur-3xl"></div>
+            </div>
+            
+            <div className="relative w-72 h-72 lg:w-80 lg:h-80 z-10">
+              {/* Beautiful Haley Image with fixed background */}
+              <div className="absolute inset-0 rounded-full overflow-hidden glass-card bg-gradient-to-br from-background/95 to-background/90">
                 <img 
                   src={haleyImage} 
                   alt="Haley - Your magical AI assistant" 
-                  className="w-full h-full object-cover animate-float-ultra transition-all duration-500"
+                  className="w-full h-full object-cover animate-float-super-slow transition-all duration-500"
+                  style={{ objectPosition: 'center' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
                 

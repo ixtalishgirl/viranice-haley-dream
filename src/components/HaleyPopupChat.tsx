@@ -1,31 +1,42 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { X, MessageCircle, Heart, Sparkles, Send, Paperclip } from 'lucide-react';
+import { X, MessageCircle, Heart, Sparkles, Send, Paperclip, Download } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import haleyNew from '@/assets/haley-new.jpg';
+import { useChatMessages } from '@/hooks/useChatMessages';
+import { useMessageLimit } from '@/hooks/useMessageLimit';
+import MessageLimitBadge from '@/components/MessageLimitBadge';
+import { supabase } from '@/integrations/supabase/client';
+import { useToast } from '@/hooks/use-toast';
 
 interface HaleyPopupChatProps {
   isOpen?: boolean;
   onClose?: () => void;
 }
 
-  interface Message {
-    id: number;
-    text?: string;
-    imageUrl?: string;
-    fileName?: string;
-    isUser: boolean;
-    timestamp: Date;
-  }
+interface LocalMessage {
+  id: string;
+  text?: string;
+  imageUrl?: string;
+  fileName?: string;
+  role: 'user' | 'assistant';
+  timestamp: Date;
+  session_id?: string;
+}
 
 const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) => {
   const [isOpen, setIsOpen] = useState(propIsOpen ?? false);
   const [currentMessage, setCurrentMessage] = useState(0);
-  const [showGreeting, setShowGreeting] = useState(false);
-  const [messages, setMessages] = useState<Message[]>([]);
+  const [showGreeting, setShowGreeting] = useState(true);
   const [inputMessage, setInputMessage] = useState('');
+  const [currentSessionId, setCurrentSessionId] = useState<string | undefined>();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { toast } = useToast();
+  
+  const { messages, saveMessage, addLocalMessage, setMessages } = useChatMessages(currentSessionId);
+  const { remainingMessages, canSendMessage, incrementCount, loading: limitLoading } = useMessageLimit();
 
   const greetingMessages = [
     "Hello! I'm your Haley Assistant 💫",
@@ -41,9 +52,31 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
     }
   }, [propIsOpen]);
 
+  // Check authentication and create session
   useEffect(() => {
+    const checkAuth = async () => {
+      const { data: { user } } = await supabase.auth.getUser();
+      setIsAuthenticated(!!user);
+
+      if (user && isOpen && !currentSessionId) {
+        // Create a new chat session
+        const { data, error } = await supabase
+          .from('haley_chat_sessions')
+          .insert({
+            user_id: user.id,
+            session_name: 'New Chat',
+          })
+          .select()
+          .single();
+
+        if (!error && data) {
+          setCurrentSessionId(data.id);
+        }
+      }
+    };
+
     if (isOpen) {
-      setShowGreeting(true);
+      checkAuth();
       const interval = setInterval(() => {
         setCurrentMessage((prev) => (prev + 1) % greetingMessages.length);
       }, 5000);
@@ -56,28 +89,56 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
     onClose?.();
   };
 
-  const handleSendMessage = () => {
-    if (inputMessage.trim()) {
-      const newMessage: Message = {
-        id: Date.now(),
-        text: inputMessage,
-        isUser: true,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, newMessage]);
-      setInputMessage('');
-      
-      // Auto-reply from Haley
-      setTimeout(() => {
-        const haleyResponse: Message = {
-          id: Date.now() + 1,
-          text: "Thanks for your message! I'm here to help you with anything you need! 🌸✨",
-          isUser: false,
-          timestamp: new Date()
-        };
-        setMessages(prev => [...prev, haleyResponse]);
-      }, 1000);
+  const handleSendMessage = async () => {
+    if (!inputMessage.trim()) return;
+
+    // Check if user can send message (limit check)
+    if (isAuthenticated && !canSendMessage) {
+      toast({
+        title: 'Message Limit Reached',
+        description: 'You\'ve reached your daily limit of 5 messages. Messages will reset in 24 hours!',
+        variant: 'destructive',
+      });
+      return;
     }
+
+    const userText = inputMessage;
+    setInputMessage('');
+
+    // Add user message to UI immediately
+    const localUserMsg: LocalMessage = {
+      id: Date.now().toString(),
+      text: userText,
+      role: 'user',
+      timestamp: new Date(),
+    };
+    addLocalMessage(localUserMsg);
+
+    // Increment message count if authenticated
+    if (isAuthenticated) {
+      const success = await incrementCount();
+      if (!success) return;
+      
+      // Save to database
+      await saveMessage(userText, 'user', currentSessionId);
+    }
+
+    // Auto-reply from Haley
+    setTimeout(async () => {
+      const haleyResponse = "Thanks for your message! I'm here to help you with anything you need! 🌸✨";
+      const localHaleyMsg: LocalMessage = {
+        id: (Date.now() + 1).toString(),
+        text: haleyResponse,
+        role: 'assistant',
+        timestamp: new Date(),
+      };
+      addLocalMessage(localHaleyMsg);
+
+      // Save Haley's response if authenticated
+      if (isAuthenticated) {
+        await saveMessage(haleyResponse, 'assistant', currentSessionId);
+      }
+    }, 1000);
   };
 
   const handleFileUpload = () => {
@@ -89,34 +150,34 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
     if (file) {
       if (file.type.startsWith('image/')) {
         const url = URL.createObjectURL(file);
-        const imgMessage: Message = {
-          id: Date.now(),
+        const imgMessage: LocalMessage = {
+          id: Date.now().toString(),
           imageUrl: url,
           fileName: file.name,
-          isUser: true,
+          role: 'user',
           timestamp: new Date()
         };
-        setMessages(prev => [...prev, imgMessage]);
+        addLocalMessage(imgMessage);
       } else {
-        const fileMessage: Message = {
-          id: Date.now(),
+        const fileMessage: LocalMessage = {
+          id: Date.now().toString(),
           text: `📎 Shared file: ${file.name}`,
           fileName: file.name,
-          isUser: true,
+          role: 'user',
           timestamp: new Date()
         };
-        setMessages(prev => [...prev, fileMessage]);
+        addLocalMessage(fileMessage);
       }
       
       // Haley's response to file
       setTimeout(() => {
-        const haleyResponse: Message = {
-          id: Date.now() + 1,
+        const haleyResponse: LocalMessage = {
+          id: (Date.now() + 1).toString(),
           text: "Thanks for sharing! I can preview images and note files. How can I help with this? 🌟",
-          isUser: false,
+          role: 'assistant',
           timestamp: new Date()
         };
-        setMessages(prev => [...prev, haleyResponse]);
+        addLocalMessage(haleyResponse);
       }, 1000);
     }
   };
@@ -141,10 +202,13 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
               />
               <div className="absolute bottom-0 right-0 w-3 h-3 bg-neon-green rounded-full border-2 border-background"></div>
             </div>
-            <div>
+            <div className="flex-1">
               <h3 className="font-semibold text-lg">Haley Assistant</h3>
               <p className="text-xs text-neon-green">● Online</p>
             </div>
+            {isAuthenticated && !limitLoading && (
+              <MessageLimitBadge remaining={remainingMessages} />
+            )}
           </div>
           <Button
             variant="ghost"
@@ -168,16 +232,21 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="glass-card p-3 rounded-lg max-w-[200px]">
+              <div className="glass-card p-3 rounded-lg max-w-[280px]">
                 <p className="text-sm">{greetingMessages[currentMessage]}</p>
+                {!isAuthenticated && (
+                  <p className="text-xs text-muted-foreground mt-2">
+                    💡 Sign in to save your conversations and get 5 free messages daily!
+                  </p>
+                )}
               </div>
             </div>
           )}
 
           {/* Chat Messages */}
           {messages.map((message) => (
-            <div key={message.id} className={`flex items-start space-x-3 animate-fade-in ${message.isUser ? 'flex-row-reverse space-x-reverse' : ''}`}>
-              {!message.isUser && (
+            <div key={message.id} className={`flex items-start space-x-3 animate-fade-in ${message.role === 'user' ? 'flex-row-reverse space-x-reverse' : ''}`}>
+              {message.role === 'assistant' && (
                 <div className="w-8 h-8 rounded-full overflow-hidden border border-neon-blue flex-shrink-0">
                   <img 
                     src={haleyNew} 
@@ -186,7 +255,7 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
                   />
                 </div>
               )}
-              <div className={`glass-card p-3 rounded-lg max-w-[260px] ${message.isUser ? 'bg-neon-blue/15' : ''}`}>
+              <div className={`glass-card p-3 rounded-lg max-w-[280px] ${message.role === 'user' ? 'bg-neon-blue/15' : ''}`}>
                 {message.imageUrl ? (
                   <div className="space-y-2">
                     <img src={message.imageUrl} alt={message.fileName || 'shared image'} className="rounded-md max-h-48 object-cover" />
@@ -231,7 +300,8 @@ const HaleyPopupChat = ({ isOpen: propIsOpen, onClose }: HaleyPopupChatProps) =>
             <Button
               onClick={handleSendMessage}
               className="rounded-full px-4 py-2 bg-gradient-to-r from-neon-blue to-neon-green text-primary-foreground shadow-md hover:opacity-90"
-              disabled={!inputMessage.trim()}
+              disabled={!inputMessage.trim() || (isAuthenticated && !canSendMessage)}
+              title={!canSendMessage ? 'Message limit reached' : ''}
             >
               <Send className="w-5 h-5" />
             </Button>

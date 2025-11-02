@@ -14,6 +14,73 @@ export type Database = {
   }
   public: {
     Tables: {
+      haley_chat_limits: {
+        Row: {
+          created_at: string
+          id: string
+          limit_reset_at: string
+          messages_sent: number
+          plan_type: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          limit_reset_at?: string
+          messages_sent?: number
+          plan_type?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          limit_reset_at?: string
+          messages_sent?: number
+          plan_type?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "haley_chat_limits_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: true
+            referencedRelation: "haley_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      haley_chat_sessions: {
+        Row: {
+          created_at: string
+          id: string
+          last_message_at: string
+          session_name: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          last_message_at?: string
+          session_name?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          last_message_at?: string
+          session_name?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "haley_chat_sessions_user_id_fkey"
+            columns: ["user_id"]
+            isOneToOne: false
+            referencedRelation: "haley_users"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       haley_messages: {
         Row: {
           content: string
@@ -22,6 +89,7 @@ export type Database = {
           id: string
           metadata: Json | null
           role: string
+          session_id: string | null
           user_id: string | null
         }
         Insert: {
@@ -31,6 +99,7 @@ export type Database = {
           id?: string
           metadata?: Json | null
           role: string
+          session_id?: string | null
           user_id?: string | null
         }
         Update: {
@@ -40,9 +109,17 @@ export type Database = {
           id?: string
           metadata?: Json | null
           role?: string
+          session_id?: string | null
           user_id?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "haley_messages_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "haley_chat_sessions"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "haley_messages_user_id_fkey"
             columns: ["user_id"]
@@ -146,6 +223,12 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      check_message_limit: { Args: { user_uuid: string }; Returns: boolean }
+      get_remaining_messages: { Args: { user_uuid: string }; Returns: number }
+      increment_message_count: {
+        Args: { user_uuid: string }
+        Returns: undefined
+      }
       increment_thumbnail_views: {
         Args: { thumbnail_uuid: string }
         Returns: undefined
