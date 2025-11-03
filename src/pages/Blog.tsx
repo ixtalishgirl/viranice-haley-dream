@@ -7,14 +7,14 @@ import MagicalNavigation from '@/components/MagicalNavigation';
 const blogPosts = [
   {
     id: 1,
-    title: "10 AI Tools That Will Transform Your Content Creation in 2024",
-    excerpt: "Discover the most powerful AI tools that can help you create viral content and boost your social media presence. From video editing to caption generation, we cover everything.",
+    title: "10 Creative Ways to Use AI in Your Content Creation",
+    excerpt: "Discover powerful ways to use AI for creating engaging content that resonates with your audience. From ideation to execution, master the creative process.",
     date: "March 15, 2024",
     author: "Haley",
     readTime: "12 min read",
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
-    slug: "ai-tools-content-creation",
-    category: "AI Tools"
+    slug: "ai-content-creation",
+    category: "AI & Creativity"
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const blogPosts = [
   {
     id: 5,
     title: "Building Your Dream Content Strategy with AI: A Complete Framework",
-    excerpt: "A comprehensive guide to leveraging AI tools for creating a content strategy that works. From ideation to distribution, master every step.",
+    excerpt: "A comprehensive guide to leveraging AI for creating a content strategy that works. From ideation to distribution, master every step.",
     date: "March 1, 2024",
     author: "Haley",
     readTime: "20 min read",
