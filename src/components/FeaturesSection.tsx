@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Image, Download, Shield, Sparkles, Zap } from 'lucide-react';
+import haleyNew from '@/assets/haley-new.jpg';
 
 const FeaturesSection = () => {
   const features = [
@@ -57,13 +58,29 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-12 relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 space-y-4">
-          <h2 className="text-3xl md:text-4xl font-bold">
-            Everything You Need in <span className="magic-text">One Place</span> ✨
+        {/* About Haley Header with Image */}
+        <div className="text-center mb-12 space-y-6">
+          <h2 className="text-3xl md:text-4xl font-bold magic-text">
+            Wanna learn more about Haley? 💖
           </h2>
+          
+          {/* Haley's Picture */}
+          <div className="flex justify-center mb-8">
+            <div className="relative w-48 h-48 rounded-full overflow-hidden glass-card border-4 border-neon-blue/30 shadow-2xl animate-float-slow">
+              <img 
+                src={haleyNew} 
+                alt="Haley - Your AI Companion" 
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-neon-blue/20 via-transparent to-neon-green/20"></div>
+              {/* Online indicator */}
+              <div className="absolute top-3 right-3 w-6 h-6 bg-neon-green rounded-full border-2 border-white animate-pulse-slow"></div>
+            </div>
+          </div>
+          
           <p className="text-foreground/80 max-w-2xl mx-auto text-lg">
-            Haley Dreamland combines powerful features to help you save memories, create content, 
-            and stay organized—all with your personal AI companion.
+            Your personal AI companion who helps you save memories, create content, 
+            and stay organized—all in one magical place! ✨
           </p>
         </div>
 

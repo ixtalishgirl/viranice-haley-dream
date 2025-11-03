@@ -108,7 +108,7 @@ const Index = () => {
               
               <div className="mt-6 pt-4 border-t border-border">
                 <p className="text-xs text-muted-foreground">
-                  © 2024 Haley Dreamland. All rights reserved. 
+                  © 2025 Haley Dreamland. All rights reserved. 
                   <span className="ml-2">🌸 Made with love and AI magic ✨</span>
                 </p>
               </div>

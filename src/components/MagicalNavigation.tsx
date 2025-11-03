@@ -52,7 +52,7 @@ const MagicalNavigation = () => {
   const navItems = [
     { name: 'Home', icon: <Sparkles className="w-4 h-4" />, href: '#home' },
     { name: 'Anime', icon: <Heart className="w-4 h-4" />, href: '#anime' },
-    { name: 'AI Tools', icon: <Wand2 className="w-4 h-4" />, href: '#tools' },
+    { name: "Haley's Dreamland", icon: <Wand2 className="w-4 h-4" />, href: '#features' },
   ];
 
   return (
@@ -93,7 +93,7 @@ const MagicalNavigation = () => {
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-muted-foreground" />
               <input
                 type="text"
-                placeholder="Search anime, tools..."
+                placeholder="Search anime, features..."
                 className="pl-10 pr-4 py-2 rounded-full border border-border bg-background/50 focus:outline-none focus:ring-2 focus:ring-sakura-primary font-poppins"
               />
             </div>

@@ -74,13 +74,6 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Stats - kept for mobile, hidden on desktop */}
-            <div className="flex lg:hidden flex-wrap justify-center gap-4 text-center">
-              <div className="glass-card p-3 rounded-xl animate-float">
-                <div className="text-lg font-bold magic-text">∞</div>
-                <div className="text-sm text-foreground/95 font-semibold">Conversations</div>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
