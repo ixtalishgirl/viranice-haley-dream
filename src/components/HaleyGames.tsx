@@ -34,7 +34,7 @@ const games = [
 ];
 
 interface HaleyGamesProps {
-  onClose?: () => void;
+  onClose: () => void;
 }
 
 const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
@@ -42,15 +42,26 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
 
   const SelectedGameComponent = games.find(g => g.id === selectedGame)?.component;
 
+  if (selectedGame && SelectedGameComponent) {
+    return <SelectedGameComponent onClose={() => setSelectedGame(null)} />;
+  }
+
   return (
-    <section id="games" className="py-12 relative">
-      <div className="container mx-auto px-4">
+    <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 animate-fade-in">
+      <div className="glass-card rounded-3xl p-8 max-w-6xl w-full max-h-[90vh] overflow-y-auto relative">
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 p-3 rounded-full glass-card-hover"
+        >
+          <X className="w-6 h-6" />
+        </button>
+
         {/* Header with Haley */}
         <div className="text-center mb-8">
           <div className="flex justify-center mb-4">
-            <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-neon-pink shadow-2xl animate-float">
+            <div className="relative w-24 h-24 rounded-full overflow-hidden border-4 border-pink-400 shadow-2xl animate-float">
               <img src={haleyNew} alt="Haley" className="w-full h-full object-cover" />
-              <div className="absolute bottom-1 right-1 w-5 h-5 bg-neon-green rounded-full border-2 border-background animate-pulse-slow"></div>
+              <div className="absolute bottom-1 right-1 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse"></div>
             </div>
           </div>
           <h2 className="text-4xl font-bold magic-text mb-2">Haley's Game Arcade 🎮</h2>
@@ -60,14 +71,14 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
         </div>
 
         {/* Games Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {games.map((game) => (
             <div
               key={game.id}
               onClick={() => setSelectedGame(game.id)}
               className="cursor-pointer group"
             >
-              <div className="glass-card-hover rounded-2xl overflow-hidden border-2 border-transparent hover:border-neon-blue transition-all duration-300">
+              <div className="glass-card-hover rounded-2xl overflow-hidden border-2 border-transparent hover:border-primary transition-all duration-300">
                 <div className={`bg-gradient-to-br ${game.color} p-6 text-white relative overflow-hidden h-40 flex items-center justify-center`}>
                   <div className="text-6xl group-hover:scale-125 transition-transform duration-300">
                     {game.name.split(' ')[1]}
@@ -85,7 +96,7 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
                 </div>
 
                 <div className="p-4">
-                  <h3 className="font-bold text-xl mb-2 group-hover:text-neon-blue transition-colors">
+                  <h3 className="font-bold text-xl mb-2 group-hover:text-primary transition-colors">
                     {game.name}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4 font-poppins">
@@ -101,18 +112,13 @@ const HaleyGames: React.FC<HaleyGamesProps> = ({ onClose }) => {
         </div>
 
         {/* Footer Message */}
-        <div className="mt-8 text-center glass-card p-4 rounded-2xl max-w-2xl mx-auto">
+        <div className="mt-8 text-center glass-card p-4 rounded-2xl">
           <p className="text-muted-foreground font-poppins">
             ✨ More amazing games coming soon! Stay tuned! 🌸
           </p>
         </div>
       </div>
-      
-      {/* Game Modals */}
-      {selectedGame && SelectedGameComponent && (
-        <SelectedGameComponent onClose={() => setSelectedGame(null)} />
-      )}
-    </section>
+    </div>
   );
 };
 

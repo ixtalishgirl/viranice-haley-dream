@@ -31,7 +31,7 @@ const TermsOfService = () => {
             <section className="animate-fade-in">
               <h2 className="text-3xl font-bold mb-6 text-neon-blue">1. Acceptance of Terms & Agreement to Comply</h2>
               <p className="mb-4 text-lg">
-                These Terms of Service ("Terms," "Agreement") constitute a legally binding agreement between you ("User," "you," or "your") and ViraLux | Haley's Dreamland ("ViraLux," "we," "us," or "our") governing your access to and use of our website, platform, AI-powered services, and related content (collectively, the "Services").
+                These Terms of Service ("Terms," "Agreement") constitute a legally binding agreement between you ("User," "you," or "your") and ViraLux | Haley's Dreamland ("ViraLux," "we," "us," or "our") governing your access to and use of our website, platform, AI-powered tools, services, and related content (collectively, the "Services").
               </p>
               <p className="mb-4">
                 By creating an account, accessing our platform, or using any of our Services, you acknowledge that you have read, understood, and agree to be bound by these Terms, along with our Privacy Policy, Cookie Policy, and any additional terms and conditions that may apply to specific features or services.
@@ -85,7 +85,7 @@ const TermsOfService = () => {
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">3.1 Permitted Uses</h3>
               <p className="mb-4">You may use ViraLux Services to:</p>
               <ul className="list-disc pl-8 space-y-3 mb-6">
-                <li>Generate creative content ideas and predictions using our AI features</li>
+                <li>Generate creative content ideas and predictions using our AI tools</li>
                 <li>Create and optimize YouTube titles, descriptions, and thumbnails</li>
                 <li>Discover and explore anime content recommendations</li>
                 <li>Interact with Haley Assistant for platform guidance</li>
@@ -102,7 +102,7 @@ const TermsOfService = () => {
                 <li><strong>Harassment & Abuse:</strong> Harass, threaten, intimidate, impersonate, or harm other users or third parties</li>
                 <li><strong>Spam & Manipulation:</strong> Send unsolicited messages, engage in spamming, or manipulate our algorithms unfairly</li>
                 <li><strong>Unauthorized Access:</strong> Attempt to gain unauthorized access to our systems, servers, networks, or user accounts</li>
-                <li><strong>Data Scraping:</strong> Use automated bots, scrapers, or crawlers to extract data from our platform without permission</li>
+                <li><strong>Data Scraping:</strong> Use automated tools, bots, scrapers, or crawlers to extract data from our platform without permission</li>
                 <li><strong>Reverse Engineering:</strong> Decompile, disassemble, reverse engineer, or attempt to derive source code from our Services</li>
                 <li><strong>Commercial Exploitation:</strong> Resell, redistribute, or commercialize our Services without authorization</li>
                 <li><strong>False Information:</strong> Provide false, misleading, or fraudulent information during registration or use</li>

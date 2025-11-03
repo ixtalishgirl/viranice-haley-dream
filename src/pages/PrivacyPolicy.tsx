@@ -25,7 +25,7 @@ const PrivacyPolicy = () => {
             <section className="animate-fade-in">
               <h2 className="text-3xl font-bold mb-6 text-neon-blue">1. Introduction & Scope</h2>
               <p className="mb-4 text-lg">
-                Welcome to ViraLux | Haley's Dreamland ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our AI-powered services, including our viral prediction features, content generators, anime content discovery, and AI assistant capabilities.
+                Welcome to ViraLux | Haley's Dreamland ("we," "our," or "us"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our AI-powered services, including our viral prediction tools, YouTube title generators, anime content discovery features, and AI assistant capabilities.
               </p>
               <p className="mb-4">
                 We are committed to protecting your privacy and ensuring transparency about our data practices. This policy applies to all users of our platform, whether you're a visitor, registered user, or subscriber. By accessing or using ViraLux, you acknowledge that you have read, understood, and agree to be bound by this Privacy Policy.
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
               <p className="mb-4">We collect information that you voluntarily provide to us when you:</p>
               <ul className="list-disc pl-8 space-y-3 mb-6">
                 <li><strong>Create an Account:</strong> Email address, username, password (encrypted), display name, profile picture, and demographic information (age, location, preferences)</li>
-                <li><strong>Use Our Services:</strong> Content you input into our AI services (video titles, descriptions, keywords, images), search queries, preferences, and generation history</li>
+                <li><strong>Use Our Tools:</strong> Content you input into our AI tools (video titles, descriptions, keywords, images), search queries, tool preferences, and generation history</li>
                 <li><strong>Communicate with Us:</strong> Messages sent through contact forms, support tickets, chat interactions with Haley Assistant, feedback submissions, and survey responses</li>
                 <li><strong>Subscribe to Services:</strong> Payment information (processed securely through third-party payment processors), billing address, subscription preferences, and purchase history</li>
                 <li><strong>Participate in Community:</strong> Forum posts, comments, ratings, reviews, shared content, and social interactions</li>
@@ -71,7 +71,7 @@ const PrivacyPolicy = () => {
               
               <h3 className="text-xl font-semibold mb-4 text-neon-pink">3.1 Primary Uses</h3>
               <ul className="list-disc pl-8 space-y-3 mb-6">
-                <li><strong>Service Delivery:</strong> Provide and maintain our AI-powered services, process your requests, generate content predictions, deliver personalized recommendations</li>
+                <li><strong>Service Delivery:</strong> Provide and maintain our AI-powered tools, process your requests, generate content predictions, deliver personalized recommendations</li>
                 <li><strong>Account Management:</strong> Create and manage your account, authenticate users, process subscriptions, handle billing and payments</li>
                 <li><strong>Personalization:</strong> Customize your experience, remember your preferences, provide relevant content suggestions, optimize tool performance</li>
                 <li><strong>Communication:</strong> Send service updates, respond to inquiries, provide customer support, deliver newsletters and marketing communications (with consent)</li>
@@ -96,7 +96,7 @@ const PrivacyPolicy = () => {
                 <li>Cloud hosting and data storage services</li>
                 <li>AI and machine learning infrastructure providers</li>
                 <li>Payment processing and billing services</li>
-                <li>Analytics and performance monitoring</li>
+                <li>Analytics and performance monitoring tools</li>
                 <li>Email delivery and communication platforms</li>
                 <li>Customer support and ticketing systems</li>
                 <li>Security and fraud prevention services</li>
@@ -200,7 +200,7 @@ const PrivacyPolicy = () => {
               </p>
               <ul className="list-disc pl-8 space-y-3 mb-6">
                 <li><strong>Training Data:</strong> We use aggregated, anonymized data to improve our AI models</li>
-                <li><strong>User Content:</strong> Content you input into our services is processed by AI but not shared publicly without your consent</li>
+                <li><strong>User Content:</strong> Content you input into our tools is processed by AI but not shared publicly without your consent</li>
                 <li><strong>Automated Decisions:</strong> Our AI makes content suggestions, but you retain full control over final decisions</li>
                 <li><strong>Transparency:</strong> We're committed to explainable AI and will provide information about how our algorithms work upon request</li>
               </ul>
