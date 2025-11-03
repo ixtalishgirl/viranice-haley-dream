@@ -74,13 +74,6 @@ const HeroSection = () => {
               </p>
             </div>
 
-            {/* Stats - kept for mobile, hidden on desktop */}
-            <div className="flex lg:hidden flex-wrap justify-center gap-4 text-center">
-              <div className="glass-card p-3 rounded-xl animate-float">
-                <div className="text-lg font-bold magic-text">∞</div>
-                <div className="text-sm text-foreground/95 font-semibold">Conversations</div>
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
@@ -88,9 +81,17 @@ const HeroSection = () => {
                 <Play className="w-4 h-4 mr-2" />
                 Start Chatting ✨
               </Button>
-              <Button className="btn-purple text-base px-6 py-3">
+              <Button 
+                onClick={() => {
+                  const gamesSection = document.getElementById('games');
+                  if (gamesSection) {
+                    gamesSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="btn-purple text-base px-6 py-3"
+              >
                 <Wand2 className="w-4 h-4 mr-2" />
-                Explore Features
+                Wanna play games with me? 🎮
               </Button>
             </div>
 

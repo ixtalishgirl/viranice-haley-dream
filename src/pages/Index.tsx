@@ -5,7 +5,7 @@ import { MessageCircle } from 'lucide-react';
 import { Helmet } from 'react-helmet';
 import MagicalNavigation from '@/components/MagicalNavigation';
 import HeroSection from '@/components/HeroSection';
-import ToolsSection from '@/components/ToolsSection';
+import HaleyGames from '@/components/HaleyGames';
 import FeaturesSection from '@/components/FeaturesSection';
 import AnimeSection from '@/components/AnimeSection';
 
@@ -13,10 +13,32 @@ import ClickAnimations from '@/components/ClickAnimations';
 import JellyClick from '@/components/JellyClick';
 import ThemeBackground3D from '@/components/ThemeBackground3D';
 import FloatingChatButton from '@/components/FloatingChatButton';
+import BackgroundSettings from '@/components/BackgroundSettings';
 import darkJungleBg from '@/assets/dark-jungle-bg.jpg';
+import mountainRiverBg from '@/assets/mountain-river-bg.jpg';
+import fantasyBg from '@/assets/fantasy-bg.png';
 
 const Index = () => {
   const [currentTheme, setCurrentTheme] = useState('dark');
+  const [currentBackground, setCurrentBackground] = useState('dark-jungle');
+
+  const backgrounds = {
+    'dark-jungle': darkJungleBg,
+    'mountain-river': mountainRiverBg,
+    'fantasy': fantasyBg,
+  };
+
+  useEffect(() => {
+    const savedBg = localStorage.getItem('haley-background');
+    if (savedBg) {
+      setCurrentBackground(savedBg);
+    }
+  }, []);
+
+  const handleBackgroundChange = (bgId: string) => {
+    setCurrentBackground(bgId);
+    localStorage.setItem('haley-background', bgId);
+  };
 
   useEffect(() => {
     const observer = new MutationObserver(() => {
@@ -48,11 +70,11 @@ const Index = () => {
       </Helmet>
       
       <div className="min-h-screen relative overflow-x-hidden">
-      {/* Beautiful Mountain River Background */}
+      {/* Dynamic Background */}
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: `url(${darkJungleBg})`,
+          backgroundImage: `url(${backgrounds[currentBackground as keyof typeof backgrounds]})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed'
@@ -81,6 +103,11 @@ const Index = () => {
           
           {/* Anime Section */}
           <AnimeSection />
+          
+          {/* Games Section */}
+          <section id="games">
+            <HaleyGames />
+          </section>
           
           {/* Features Section */}
           <FeaturesSection />
@@ -119,7 +146,12 @@ const Index = () => {
         
         {/* Global floating chat button */}
         <FloatingChatButton />
-        {/* Haley chat removed as requested */}
+        
+        {/* Background Settings */}
+        <BackgroundSettings 
+          currentBackground={currentBackground}
+          onBackgroundChange={handleBackgroundChange}
+        />
       </div>
       </div>
     </>
