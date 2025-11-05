@@ -1,4 +1,4 @@
-import { db } from "./db";
+import { db } from "./db.js";
 import {
   haleyUsers,
   haleyMessages,
@@ -15,7 +15,7 @@ import {
   type InsertChatSession,
   type ChatLimit,
   type InsertChatLimit,
-} from "@shared/schema";
+} from "../shared/schema.js";
 import { eq, and, desc, sql } from "drizzle-orm";
 
 export interface IStorage {

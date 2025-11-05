@@ -1,6 +1,6 @@
 import type { Express, Request, Response } from "express";
-import { storage } from "./storage";
-import { insertUserSchema, insertMessageSchema, insertThumbnailSchema, insertChatSessionSchema } from "@shared/schema";
+import { storage } from "./storage.js";
+import { insertUserSchema, insertMessageSchema, insertThumbnailSchema, insertChatSessionSchema } from "../shared/schema.js";
 
 export function registerRoutes(app: Express) {
   

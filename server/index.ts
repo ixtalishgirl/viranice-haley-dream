@@ -1,6 +1,6 @@
 import express, { type Request, Response, NextFunction } from "express";
-import { registerRoutes } from "./routes";
-import { setupVite, serveStatic, log } from "./vite";
+import { registerRoutes } from "./routes.js";
+import { setupVite, serveStatic, log } from "./vite.js";
 
 const app = express();
 app.use(express.json());
@@ -38,10 +38,10 @@ app.use((req, res, next) => {
 
 (async () => {
   registerRoutes(app);
-  const server = await setupVite(app, serveStatic);
+  await setupVite(app, serveStatic);
 
   const PORT = 5000;
-  server.listen(PORT, "0.0.0.0", () => {
+  app.listen(PORT, "0.0.0.0", () => {
     log(`Server running on port ${PORT}`);
   });
 })();
