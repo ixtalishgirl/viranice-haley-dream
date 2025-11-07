@@ -57,19 +57,19 @@ export const haleyChatLimits = pgTable("haley_chat_limits", {
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
-export const insertUserSchema = createInsertSchema(haleyUsers).omit({ id: true, createdAt: true });
-export const insertChatSessionSchema = createInsertSchema(haleyChatSessions).omit({ id: true, createdAt: true, lastMessageAt: true });
-export const insertMessageSchema = createInsertSchema(haleyMessages).omit({ id: true, createdAt: true });
-export const insertThumbnailSchema = createInsertSchema(haleyThumbnails).omit({ id: true, createdAt: true, uuid: true });
-export const insertChatLimitSchema = createInsertSchema(haleyChatLimits).omit({ id: true, createdAt: true });
+export const insertUserSchema = createInsertSchema(haleyUsers);
+export const insertChatSessionSchema = createInsertSchema(haleyChatSessions);
+export const insertMessageSchema = createInsertSchema(haleyMessages);
+export const insertThumbnailSchema = createInsertSchema(haleyThumbnails);
+export const insertChatLimitSchema = createInsertSchema(haleyChatLimits);
 
 export type User = typeof haleyUsers.$inferSelect;
-export type InsertUser = z.infer<typeof insertUserSchema>;
+export type InsertUser = typeof haleyUsers.$inferInsert;
 export type ChatSession = typeof haleyChatSessions.$inferSelect;
-export type InsertChatSession = z.infer<typeof insertChatSessionSchema>;
+export type InsertChatSession = typeof haleyChatSessions.$inferInsert;
 export type Message = typeof haleyMessages.$inferSelect;
-export type InsertMessage = z.infer<typeof insertMessageSchema>;
+export type InsertMessage = typeof haleyMessages.$inferInsert;
 export type Thumbnail = typeof haleyThumbnails.$inferSelect;
-export type InsertThumbnail = z.infer<typeof insertThumbnailSchema>;
+export type InsertThumbnail = typeof haleyThumbnails.$inferInsert;
 export type ChatLimit = typeof haleyChatLimits.$inferSelect;
-export type InsertChatLimit = z.infer<typeof insertChatLimitSchema>;
+export type InsertChatLimit = typeof haleyChatLimits.$inferInsert;
